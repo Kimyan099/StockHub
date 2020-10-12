@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import StockSearchBar from './StockSearchBar'
 import {StockContext} from './StockContext'
-import TradingViewWidget from 'react-tradingview-widget';
+import TradingViewWidget from 'react-tradinnpgview-widget';
 
 
 const Stocks = props => {
@@ -23,10 +23,14 @@ const Stocks = props => {
         <div>
         <StockSearchBar></StockSearchBar>
         <TradingViewWidget
-    symbol={stock}
-    locale="eng"
-    autosize
-  />
+        symbol={stock}
+        locale="eng"
+        width="1000"
+        height="500"
+        />
+       
+        
+
         </div>
     )
 }
