@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { RiExchangeDollarFill } from 'react-icons/ri';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import './css/AdvancedNavBar.css';
+import './NavBar.css';
 import { IconContext } from 'react-icons/lib';
 
 function NavBar() {

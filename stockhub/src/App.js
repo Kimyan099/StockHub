@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/ui/navbar/NavBar';
+import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdvancedNavBar from './components/ui/navbar/advancedNavBar';
+import AdvancedNavBar from './components/NavBar';
 
 function App() {
   return (
