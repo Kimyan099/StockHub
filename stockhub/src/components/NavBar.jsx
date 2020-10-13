@@ -38,12 +38,11 @@ function NavBar() {
 				<div className='menu-icon' onClick={handleClick}>
 					{click ? <FaTimes size='35px' /> : <FaBars size='35px' />}
 				</div>
-
 				<ul className={click ? 'nav-menu-active' : 'nav-menu'}>
 					<li className='nav-item' id='space'>Space</li>
 					<li className='nav-item'>
 						<Link to='/companies' className='nav-links' onClick={handleClick}>
-							Companyies
+							Companies
 						</Link>
 					</li>
 					<li className='nav-item'>
