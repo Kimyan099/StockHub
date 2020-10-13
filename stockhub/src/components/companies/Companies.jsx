@@ -23,6 +23,8 @@ const CompanyFinder = (props) => {
         company.description.toLowerCase().includes(companyName.toLowerCase()) ||
         companyName === ""
       ) {
+        let firstLetter = company.description.charAt(0);
+        let restOfTheWord = company.description.toLowerCase().slice(0);
         return (
           <div style={{ textAlign: "center" }}>
             <Link
@@ -31,7 +33,7 @@ const CompanyFinder = (props) => {
             >
               <CompanyDiv>
                   
-                {company.description}
+                {firstLetter + restOfTheWord}
                 {"\n"}
                 <Route path={"/companies/" + company.symbol}>
                   <CompanyDetails symbol={company.symbol} />
