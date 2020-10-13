@@ -22,14 +22,14 @@ function App() {
 					<Route path='/' exact></Route>
 					<Route path="/companies" exact></Route>
 					<Route path="/market-news" exact ></Route>
-					<StockData>
-					<Route path="/stocks" exact component={Stocks}></Route>
-					</StockData>
-					<Route path="/stocks" exact></Route>
+
           			<Route path="/profile" exact ></Route>
 				</Switch>
-
-				<Home />
+				<StockData>
+					<Route path="/stocks"  component={Stocks}></Route>
+					</StockData>
+				<Route path="/" exact component={Home} ></Route>
+				
 			</div>
 		</Router>
   );
