@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
+
 function NavBar() {
+    
 	return (
 		<div id='navbar'>
 			<ul>
@@ -51,7 +53,9 @@ function NavBar() {
 					</li>
 				</Link>
 			</ul>
+
 		</div>
+        
 	);
 }
 
