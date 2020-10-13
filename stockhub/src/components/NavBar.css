@@ -109,7 +109,7 @@
     padding: 2rem;
     width: 100%;
     display: table;
-    color: black;
+    /* color: black; */
   }
 
   .nav-links:hover {
