@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import Home from './components/pages/HomePage/Home'
+import CompanyFinder from './components/companies/Companies';
+import {CompanyProvider} from './components/companies/GetCompanies'
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
 				{/* <NavBar /> */}
         <NavBar />
 				<Switch>
+					<CompanyProvider>
+						<Route path="/companies" render={(props) => <CompanyFinder />}>
+						</Route>
+					</CompanyProvider>
 					<Route path='/' exact></Route>
 					<Route path="/companies" exact></Route>
 					<Route path="/market-news" exact ></Route>
