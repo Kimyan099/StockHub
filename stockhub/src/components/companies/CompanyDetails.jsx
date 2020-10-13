@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleStockWidget from "../SingleStockWidget"
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { Button } from '../Button'
 
 
@@ -37,12 +37,12 @@ const CompanyDetails = (props) => {
       <p style={{backgroundColor:"#fff"}}>Country: {company.country}</p>
       <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
       <div style={{marginTop: "10px", backgroundColor:"#fff"}}>
-      <Link to={`/companies/${symbol}/details`}>
+      <Link to={`/details/${symbol}`}>
           <Button  buttonSize='btn--wide' buttonColor='blue'>
             Details
         </Button>
       </Link>
-      
+
       </div>
       <br/>
     </div>

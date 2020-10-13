@@ -34,7 +34,7 @@ const CompanyFinder = (props) => {
             >
               <CompanyDiv>
                 {firstLetter + restOfTheWord}
-                <Route path={"/companies/" + company.symbol}>
+                <Route path={"/companies/" + company.symbol} exact>
                   <CompanyDetails symbol={company.symbol} />
                 </Route>
               </CompanyDiv>
