@@ -10,9 +10,9 @@ const SingleStockWidget = (props) => {
     script.async = true;
     script.innerHTML = JSON.stringify({
       symbol: `${symbol}`,
-      width: 300,
-      height: 35,
-      colorTheme: "dark",
+      width: 328,
+      height: 40,
+      colorTheme: "light",
       isTransparent: false,
       locale: "en",
     });

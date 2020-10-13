@@ -33,7 +33,6 @@ const CompanyFinder = (props) => {
               to={"/companies/" + company.symbol}
             >
               <CompanyDiv>
-                  
                 {firstLetter + restOfTheWord}
                 <Route path={"/companies/" + company.symbol}>
                   <CompanyDetails symbol={company.symbol} />
@@ -50,7 +49,7 @@ const CompanyFinder = (props) => {
 
   const CompanyDiv = styled.div`
     padding: 10px;
-    width: 400px;
+    width: 350px;
     border: solid 1px;
     border-radius: 20px;
     margin: 5px;
