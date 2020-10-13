@@ -37,11 +37,12 @@ const CompanyDetails = (props) => {
       <p style={{backgroundColor:"#fff"}}>Country: {company.country}</p>
       <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
       <div style={{marginTop: "10px", backgroundColor:"#fff"}}>
-      <Link to='/sign-up'>
+      <Link to={`/companies/${symbol}/details`}>
           <Button  buttonSize='btn--wide' buttonColor='blue'>
             Details
         </Button>
       </Link>
+      
       </div>
       <br/>
     </div>

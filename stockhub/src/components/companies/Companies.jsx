@@ -80,7 +80,7 @@ const CompanyFinder = (props) => {
 
   let content = (
     <React.Fragment>
-      <div style={{ textAlign: "center", margin: "auto" }}>
+      <div style={{ textAlign: "center", margin: "auto", background: "#1c2237" }}>
         <input className="inputField"
           style={{
             margin: "30px",
