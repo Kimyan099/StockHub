@@ -26,12 +26,12 @@ const CompanyDetails = (props) => {
 
 
   let content = (
-    <div>
+    <div style={{backgroundColor:"#fff"}}>
        <img alt="LOGO" src={imgUrl} style={{margin:"20px", width:"150px", height:"150px"}}></img> 
-      <p>Since {company.ipo}</p>
-      <p>Country: {company.country}</p>
-      <p>Website: {company.weburl}</p>
-      <p>Field: {company.finnhubIndustry}</p>
+      <p style={{backgroundColor:"#fff"}}>Since {company.ipo}</p>
+      <p style={{backgroundColor:"#fff"}}>Country: {company.country}</p>
+      <p style={{backgroundColor:"#fff"}}>Website: {company.weburl}</p>
+      <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
     </div>
   );
 

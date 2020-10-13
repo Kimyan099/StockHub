@@ -3,6 +3,7 @@ import { CompaniesContext } from "./GetCompanies";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
 import CompanyDetails from "./CompanyDetails";
+import "./CompanyGrid.css"
 
 const CompanyFinder = (props) => {
   const [companies] = useContext(CompaniesContext);
@@ -26,7 +27,7 @@ const CompanyFinder = (props) => {
         let firstLetter = company.description.charAt(0);
         let restOfTheWord = company.description.toLowerCase().slice(0);
         return (
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center"}}>
             <Link
               style={{ textDecoration: "none", color: "black" }}
               to={"/companies/" + company.symbol}
@@ -34,7 +35,6 @@ const CompanyFinder = (props) => {
               <CompanyDiv>
                   
                 {firstLetter + restOfTheWord}
-                {"\n"}
                 <Route path={"/companies/" + company.symbol}>
                   <CompanyDetails symbol={company.symbol} />
                 </Route>
@@ -56,28 +56,46 @@ const CompanyFinder = (props) => {
     margin: 5px;
     float: center;
     text-align: center;
+    background: #fff;
+
     &:hover {
       background-color: cornflowerblue;
     }
   `;
 
   const ContainerDiv = styled.div`
+    /*
     display: grid;
     grid-template-columns: auto auto auto;
     margin: auto;
+    border: solid 3px white;
+    border-radius : 10px;
+    width: 81%;
+    */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+
   `;
 
   let content = (
     <React.Fragment>
       <div style={{ textAlign: "center", margin: "auto" }}>
-        <input
-          style={{ margin: "30px", width: "600px" }}
+        <input className="inputField"
+          style={{
+            margin: "30px",
+            width: "600px",
+            background: "#fff",
+            borderRadius: "10px",
+            height:"30px"
+            }}
           type="text"
           onChange={handleChange}
         />
-        <ContainerDiv>
+        <div className="cards">
           {companies.map((company) => renderSearched(company))}
-        </ContainerDiv>
+        </div>
       </div>
     </React.Fragment>
   );
