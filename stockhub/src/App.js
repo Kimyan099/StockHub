@@ -9,6 +9,9 @@ import Stocks from './components/Stocks';
 import CompanyFinder from './components/companies/Companies';
 import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/companies/DetailsPage';
+import Profile from './components/pages/ProfilePage/Profile';
+
+
 
 function App() {
 	const [companyName, setCompanyName] = useState('');
@@ -34,8 +37,10 @@ function App() {
 					<Route path='/companies' exact></Route>
 					<Route path='/market-news' exact></Route>
 
-					<Route path='/profile' exact></Route>
 				</Switch>
+				
+				<Route path='/profile' component={Profile} exact></Route>
+
 				<StockData>
 					<Route path='/stocks' component={Stocks}></Route>
 				</StockData>
