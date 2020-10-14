@@ -1,38 +1,44 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Stocks from './components/Stocks'
-import {StockData} from './components/StockContext'
-import Home from './components/pages/HomePage/Home'
+import { StockData } from './components/StockContext';
+import { CompanyProvider } from './components/companies/GetCompanies';
+import Home from './components/pages/HomePage/Home';
+import NavBar from './components/NavBar';
+import Stocks from './components/Stocks';
 import CompanyFinder from './components/companies/Companies';
-import {CompanyProvider} from './components/companies/GetCompanies'
+import Footer from './components/pages/footer/Footer';
+
+
+
+
 
 function App() {
-  return (
-    <Router>
-			<div id='body'>
-				{/* <NavBar /> */}
-        <NavBar />
+	return (
+		<Router>
+			<div>
+				<NavBar />
 				<Switch>
 					<CompanyProvider>
-						<Route path="/companies" render={(props) => <CompanyFinder />}>
-						</Route>
+						<Route
+							path='/companies'
+							render={(props) => <CompanyFinder />}
+						></Route>
 					</CompanyProvider>
 					<Route path='/' exact></Route>
-					<Route path="/companies" exact></Route>
-					<Route path="/market-news" exact ></Route>
+					<Route path='/companies' exact></Route>
+					<Route path='/market-news' exact></Route>
 
-          			<Route path="/profile" exact ></Route>
+					<Route path='/profile' exact></Route>
 				</Switch>
 				<StockData>
-					<Route path="/stocks"  component={Stocks}></Route>
-					</StockData>
-				<Route path="/" exact component={Home} ></Route>
-				
+					<Route path='/stocks' component={Stocks}></Route>
+				</StockData>
+				<Route path='/' exact component={Home}></Route>
 			</div>
+			<Footer />
 		</Router>
-  );
+	);
 }
 
 export default App;
