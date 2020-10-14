@@ -12,7 +12,6 @@ export const NewsCollection = (props) => {
       .get(`https://finnhub.io/api/v1/news?category=general&token=${token}`)
       .then((res) => {
         setNews(res.data);
-        console.log('res.data: ', res.data);
       });
   }, []);
 

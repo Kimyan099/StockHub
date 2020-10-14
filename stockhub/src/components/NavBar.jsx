@@ -21,8 +21,6 @@ function NavBar() {
     }
   };
 
-  console.log('navbar');
-
   useEffect(() => {
     showButton();
   }, []);

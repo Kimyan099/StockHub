@@ -1,16 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NewsBlock.css';
 import { Link } from 'react-router-dom';
 
 const NewsBlock = (props) => {
-  //const newsId = this.props.match.params.newsId;
+  const newsId = '/market-news/' + props.id;
 
   return (
     <div>
-      <Link to='/marketnews/:newsId'>
+      <a href={props.url} target='_blank'>
         <div className='card-block'>
           <Card style={{ width: '18rem' }}>
             <Card.Img variant='top' src={props.image} />
@@ -19,7 +18,7 @@ const NewsBlock = (props) => {
             </Card.Body>
           </Card>
         </div>
-      </Link>
+      </a>
     </div>
   );
 };

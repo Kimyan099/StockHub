@@ -9,9 +9,11 @@ const ListNews = () => {
       {news.map((newsBlock) => (
         <div>
           <NewsBlock
-            key={newsBlock.id}
+            id={newsBlock.id}
             image={newsBlock.image}
             headline={newsBlock.headline}
+            summary={newsBlock.summary}
+            url={newsBlock.url}
           />
         </div>
       ))}
