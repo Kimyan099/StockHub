@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { StockData } from './components/StockContext';
@@ -7,16 +7,15 @@ import Home from './components/pages/HomePage/Home';
 import NavBar from './components/NavBar';
 import Stocks from './components/Stocks';
 import CompanyFinder from './components/companies/Companies';
-import Footer from './components/pages/footer/Footer';
+import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
-
-	const [companyName, setCompanyName] = useState("");
+	const [companyName, setCompanyName] = useState('');
 
 	const changeCompanyName = (name) => {
-		setCompanyName(name)
-	}
+		setCompanyName(name);
+	};
 
 	return (
 		<Router>
@@ -26,7 +25,9 @@ function App() {
 					<CompanyProvider>
 						<Route
 							path='/companies'
-							render={(props) => <CompanyFinder changeCompanyName={changeCompanyName}/>}
+							render={(props) => (
+								<CompanyFinder changeCompanyName={changeCompanyName} />
+							)}
 						></Route>
 					</CompanyProvider>
 					<Route path='/' exact></Route>
@@ -36,13 +37,13 @@ function App() {
 					<Route path='/profile' exact></Route>
 				</Switch>
 				<StockData>
-					<Route path="/stocks"  component={Stocks}></Route>
-					</StockData>
-				<Route path="/" exact component={Home} ></Route>
-				<Route path="/details/:symbol" 
-        			render={(props) => (
-          		<DetailsPage {...props} name={companyName} />
-        )}/>
+					<Route path='/stocks' component={Stocks}></Route>
+				</StockData>
+				<Route path='/' exact component={Home}></Route>
+				<Route
+					path='/details/:symbol'
+					render={(props) => <DetailsPage {...props} name={companyName} />}
+				/>
 			</div>
 			<Footer />
 		</Router>
