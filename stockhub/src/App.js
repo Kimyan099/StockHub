@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -10,6 +10,12 @@ import {CompanyProvider} from './components/companies/GetCompanies'
 import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
+	const [companyName, setCompanyName] = useState("");
+
+	const changeCompanyName = (name) => {
+		setCompanyName(name)
+	}
+
   return (
     <Router>
 			<div id='body'>
@@ -17,7 +23,7 @@ function App() {
         <NavBar />
 				<Switch>
 					<CompanyProvider>
-						<Route path="/companies" render={(props) => <CompanyFinder />}>
+						<Route path="/companies" render={(props) => <CompanyFinder changeCompanyName={changeCompanyName}/>}>
 						</Route>
 					</CompanyProvider>
 					<Route path='/' exact></Route>
@@ -30,7 +36,10 @@ function App() {
 					<Route path="/stocks"  component={Stocks}></Route>
 					</StockData>
 				<Route path="/" exact component={Home} ></Route>
-				<Route path="/details/:symbol" component={DetailsPage}></Route>
+				<Route path="/details/:symbol" 
+        			render={(props) => (
+          		<DetailsPage {...props} name={companyName} />
+        )}/>
 			</div>
 		</Router>
   );
