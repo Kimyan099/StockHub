@@ -7,7 +7,7 @@ import Home from './components/pages/HomePage/Home';
 import NavBar from './components/NavBar';
 import Stocks from './components/Stocks';
 import CompanyFinder from './components/companies/Companies';
-import Footer from './components/pages/footer/Footer';
+import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
