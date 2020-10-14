@@ -10,7 +10,8 @@ function Profile() {
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <img src={require('../../../img/bird.jpg')} />
+                            {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> */}
                             {/* <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -20,7 +21,7 @@ function Profile() {
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+                                        Duckee Duu
                                     </h5>
                                     <h6>
                                         Web Developer and Designer
@@ -47,7 +48,6 @@ function Profile() {
                             <li>PROFILE</li>
                             <li><a href="">Overview</a></li>
                             <li><a href="">Stats</a></li>
-                            <li><a href="">Porftolio</a></li>
                             <li><a href="">Porftolio</a></li>
                         </ul>
                     </div>
