@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link, Route } from 'react-router-dom';
+import { Button } from '../Button';
+import DetailsPage from '../companies/DetailsPage'
+import SingleStockWidget from "../SingleStockWidget"
+
 
 
 const CompanyDetails = (props) => {
@@ -22,16 +27,26 @@ const CompanyDetails = (props) => {
         }
         console.log(res.data)
       });
+      
   }, [symbol]);
 
 
   let content = (
-    <div>
+    <div style={{backgroundColor:"#fff"}}>
        <img alt="LOGO" src={imgUrl} style={{margin:"20px", width:"150px", height:"150px"}}></img> 
-      <p>Since {company.ipo}</p>
-      <p>Country: {company.country}</p>
-      <p>Website: {company.weburl}</p>
-      <p>Field: {company.finnhubIndustry}</p>
+       <SingleStockWidget  symbol={symbol}></SingleStockWidget>
+       <br/>
+      <p style={{backgroundColor:"#fff"}}>Since {company.ipo}</p>
+      <p style={{backgroundColor:"#fff"}}>Country: {company.country}</p>
+      <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
+      <div style={{marginTop: "10px", backgroundColor:"#fff"}}>
+      <Link to={`/details/${symbol}`}>
+          <Button onClick={props.changeCompanyName.bind(this, company.name)}  buttonSize='btn--wide' buttonColor='blue'>
+            Details
+        </Button>
+       </Link> 
+      </div>
+      <br/>
     </div>
   );
 

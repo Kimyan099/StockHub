@@ -1,8 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CompaniesContext } from "./GetCompanies";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
 import CompanyDetails from "./CompanyDetails";
+import "./CompanyGrid.css";
 
 const CompanyFinder = (props) => {
   const [companies] = useContext(CompaniesContext);
@@ -13,7 +14,9 @@ const CompanyFinder = (props) => {
     console.log(companyName);
   };
 
-  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 
 
@@ -23,18 +26,20 @@ const CompanyFinder = (props) => {
         company.description.toLowerCase().includes(companyName.toLowerCase()) ||
         companyName === ""
       ) {
+        let firstLetter = company.description.charAt(0);
+        let restOfTheWord = company.description.toLowerCase().slice(0);
+        
         return (
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center"}}>
             <Link
               style={{ textDecoration: "none", color: "black" }}
               to={"/companies/" + company.symbol}
             >
               <CompanyDiv>
-                  
-                {company.description}
-                {"\n"}
-                <Route path={"/companies/" + company.symbol}>
-                  <CompanyDetails symbol={company.symbol} />
+                {firstLetter + restOfTheWord}
+                
+                <Route path={"/companies/" + company.symbol} exact>
+                  <CompanyDetails symbol={company.symbol} changeCompanyName={props.changeCompanyName} />
                 </Route>
               </CompanyDiv>
             </Link>
@@ -48,34 +53,38 @@ const CompanyFinder = (props) => {
 
   const CompanyDiv = styled.div`
     padding: 10px;
-    width: 400px;
+    width: 350px;
     border: solid 1px;
     border-radius: 20px;
     margin: 5px;
     float: center;
     text-align: center;
+    background: #fff;
+
     &:hover {
       background-color: cornflowerblue;
     }
   `;
 
-  const ContainerDiv = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin: auto;
-  `;
+
 
   let content = (
     <React.Fragment>
-      <div style={{ textAlign: "center", margin: "auto" }}>
-        <input
-          style={{ margin: "30px", width: "600px" }}
+      <div style={{ textAlign: "center", margin: "auto", background: "#1c2237" }}>
+        <input className="inputField"
+          style={{
+            margin: "30px",
+            width: "600px",
+            background: "#fff",
+            borderRadius: "10px",
+            height:"30px"
+            }}
           type="text"
           onChange={handleChange}
         />
-        <ContainerDiv>
+        <div className="cards">
           {companies.map((company) => renderSearched(company))}
-        </ContainerDiv>
+        </div>
       </div>
     </React.Fragment>
   );
