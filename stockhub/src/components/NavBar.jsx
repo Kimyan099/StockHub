@@ -31,42 +31,53 @@ function NavBar() {
     <IconContext.Provider value={{ color: '#fff' }}>
       <div className='navbar'>
         <div className='navbar-container container'>
-          <Link to='/' className='navbar-logo' onClick={handleClick}>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <RiExchangeDollarFill className='navbar-icon' />
             StockHub
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             {click ? <FaTimes size='35px' /> : <FaBars size='35px' />}
           </div>
-
           <ul className={click ? 'nav-menu-active' : 'nav-menu'}>
-            <li className='nav-item' id='space'>
+            <div className='nav-item' id='space'>
               Space
-            </li>
-            <li className='nav-item'>
-              <Link to='/companies' className='nav-links' onClick={handleClick}>
-                Companyies
+            </div>
+            <div className='nav-item'>
+              <Link
+                to='/companies'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Companies
               </Link>
-            </li>
-            <li className='nav-item'>
+            </div>
+            <div className='nav-item'>
               <Link
                 to='/market-news'
                 className='nav-links'
-                onClick={handleClick}
+                onClick={closeMobileMenu}
               >
                 Market News
               </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/stocks' className='nav-links' onClick={handleClick}>
+            </div>
+            <div className='nav-item'>
+              <Link
+                to='/stocks'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
                 Stocks
               </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/profile' className='nav-links' onClick={handleClick}>
+            </div>
+            <div className='nav-item'>
+              <Link
+                to='/profile'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
                 Profile
               </Link>
-            </li>
+            </div>
           </ul>
         </div>
       </div>
