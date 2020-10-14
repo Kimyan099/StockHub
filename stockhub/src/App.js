@@ -26,7 +26,7 @@ function App() {
 					<CompanyProvider>
 						<Route
 							path='/companies'
-							render={(props) => <CompanyFinder />}
+							render={(props) => <CompanyFinder changeCompanyName={changeCompanyName}/>}
 						></Route>
 					</CompanyProvider>
 					<Route path='/' exact></Route>
