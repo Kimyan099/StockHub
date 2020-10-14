@@ -7,7 +7,9 @@ import TradingViewWidget from "react-tradingview-widget";
 const DetailsPage = (props) => {
     const {symbol} = props.match.params;
     
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
 
     useEffect(() => {

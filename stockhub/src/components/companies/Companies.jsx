@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CompaniesContext } from "./GetCompanies";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
@@ -14,7 +14,9 @@ const CompanyFinder = (props) => {
     console.log(companyName);
   };
 
-  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 
 
