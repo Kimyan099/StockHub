@@ -14,7 +14,7 @@ export const NewsCollection = (props) => {
         setNews(res.data);
         console.log('res.data: ', res.data);
       });
-  });
+  }, []);
 
   //console.log('context news: ', [news]);
 

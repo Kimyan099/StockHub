@@ -3,7 +3,7 @@ import { NewsContext } from './NewsContext';
 
 const ListNews = (props) => {
   const [news] = useContext(NewsContext);
-  // console.log([news]);
+  console.log('hello');
 
   return (
     <div>

@@ -17,9 +17,7 @@ function App() {
           <Route path='/' exact></Route>
           <Route path='/companies' exact></Route>
           <NewsCollection>
-            <ListNews>
-              <Route path='/market-news' exact component={ListNews}></Route>
-            </ListNews>
+            <Route exact path='/market-news' render={() => <ListNews />} />
           </NewsCollection>
           <Route path='/stocks' exact></Route>
           <Route path='/profile' exact></Route>
