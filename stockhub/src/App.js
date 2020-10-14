@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { StockData } from './components/StockContext';
@@ -11,6 +11,13 @@ import Footer from './components/pages/footer/Footer';
 import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
+
+	const [companyName, setCompanyName] = useState("");
+
+	const changeCompanyName = (name) => {
+		setCompanyName(name)
+	}
+
 	return (
 		<Router>
 			<div>
@@ -32,7 +39,10 @@ function App() {
 					<Route path="/stocks"  component={Stocks}></Route>
 					</StockData>
 				<Route path="/" exact component={Home} ></Route>
-				<Route path="/details/:symbol" component={DetailsPage}></Route>
+				<Route path="/details/:symbol" 
+        			render={(props) => (
+          		<DetailsPage {...props} name={companyName} />
+        )}/>
 			</div>
 			<Footer />
 		</Router>

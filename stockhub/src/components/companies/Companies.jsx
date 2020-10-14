@@ -26,6 +26,7 @@ const CompanyFinder = (props) => {
       ) {
         let firstLetter = company.description.charAt(0);
         let restOfTheWord = company.description.toLowerCase().slice(0);
+        
         return (
           <div style={{ textAlign: "center"}}>
             <Link
@@ -35,7 +36,7 @@ const CompanyFinder = (props) => {
               <CompanyDiv>
                 {firstLetter + restOfTheWord}
                 <Route path={"/companies/" + company.symbol} exact>
-                  <CompanyDetails symbol={company.symbol} />
+                  <CompanyDetails symbol={company.symbol} changeCompanyName={props.changeCompanyName} />
                 </Route>
               </CompanyDiv>
             </Link>
@@ -62,21 +63,7 @@ const CompanyFinder = (props) => {
     }
   `;
 
-  const ContainerDiv = styled.div`
-    /*
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin: auto;
-    border: solid 3px white;
-    border-radius : 10px;
-    width: 81%;
-    */
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
 
-  `;
 
   let content = (
     <React.Fragment>

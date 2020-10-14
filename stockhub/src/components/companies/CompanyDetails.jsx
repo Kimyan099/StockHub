@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleStockWidget from "../SingleStockWidget"
 import { Link, Route } from 'react-router-dom';
-import { Button } from '../Button'
+import { Button } from '../Button';
+import DetailsPage from '../companies/DetailsPage'
+
 
 
 const CompanyDetails = (props) => {
@@ -25,6 +27,7 @@ const CompanyDetails = (props) => {
         }
         console.log(res.data)
       });
+      
   }, [symbol]);
 
 
@@ -38,11 +41,10 @@ const CompanyDetails = (props) => {
       <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
       <div style={{marginTop: "10px", backgroundColor:"#fff"}}>
       <Link to={`/details/${symbol}`}>
-          <Button  buttonSize='btn--wide' buttonColor='blue'>
+          <Button onClick={props.changeCompanyName.bind(this, company.name)}  buttonSize='btn--wide' buttonColor='blue'>
             Details
         </Button>
-      </Link>
-
+       </Link> 
       </div>
       <br/>
     </div>
