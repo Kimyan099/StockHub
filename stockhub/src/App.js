@@ -8,10 +8,7 @@ import NavBar from './components/NavBar';
 import Stocks from './components/Stocks';
 import CompanyFinder from './components/companies/Companies';
 import Footer from './components/pages/footer/Footer';
-
-
-
-
+import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
 	return (
@@ -32,9 +29,10 @@ function App() {
 					<Route path='/profile' exact></Route>
 				</Switch>
 				<StockData>
-					<Route path='/stocks' component={Stocks}></Route>
-				</StockData>
-				<Route path='/' exact component={Home}></Route>
+					<Route path="/stocks"  component={Stocks}></Route>
+					</StockData>
+				<Route path="/" exact component={Home} ></Route>
+				<Route path="/details/:symbol" component={DetailsPage}></Route>
 			</div>
 			<Footer />
 		</Router>
