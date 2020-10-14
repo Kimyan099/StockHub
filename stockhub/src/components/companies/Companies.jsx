@@ -33,9 +33,8 @@ const CompanyFinder = (props) => {
               to={"/companies/" + company.symbol}
             >
               <CompanyDiv>
-                  
                 {firstLetter + restOfTheWord}
-                <Route path={"/companies/" + company.symbol}>
+                <Route path={"/companies/" + company.symbol} exact>
                   <CompanyDetails symbol={company.symbol} />
                 </Route>
               </CompanyDiv>
@@ -50,7 +49,7 @@ const CompanyFinder = (props) => {
 
   const CompanyDiv = styled.div`
     padding: 10px;
-    width: 400px;
+    width: 350px;
     border: solid 1px;
     border-radius: 20px;
     margin: 5px;
@@ -81,7 +80,7 @@ const CompanyFinder = (props) => {
 
   let content = (
     <React.Fragment>
-      <div style={{ textAlign: "center", margin: "auto" }}>
+      <div style={{ textAlign: "center", margin: "auto", background: "#1c2237" }}>
         <input className="inputField"
           style={{
             margin: "30px",

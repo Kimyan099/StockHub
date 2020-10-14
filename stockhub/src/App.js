@@ -7,6 +7,7 @@ import {StockData} from './components/StockContext'
 import Home from './components/pages/HomePage/Home'
 import CompanyFinder from './components/companies/Companies';
 import {CompanyProvider} from './components/companies/GetCompanies'
+import DetailsPage from './components/companies/DetailsPage';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
 					<Route path="/stocks"  component={Stocks}></Route>
 					</StockData>
 				<Route path="/" exact component={Home} ></Route>
-				
+				<Route path="/details/:symbol" component={DetailsPage}></Route>
 			</div>
 		</Router>
   );
