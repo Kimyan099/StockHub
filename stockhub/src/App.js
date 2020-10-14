@@ -4,21 +4,28 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AdvancedNavBar from './components/NavBar';
 
+import ListNews from './components/MarketNews/ListNews';
+import { NewsCollection } from './components/MarketNews/NewsContext';
+
 function App() {
   return (
     <Router>
-			<div id='body'>
-				{/* <NavBar /> */}
+      <div id='body'>
+        {/* <NavBar /> */}
         <AdvancedNavBar />
-				<Switch>
-					<Route path='/' exact></Route>
-					<Route path="/companies" exact></Route>
-					<Route path="/market-news" exact ></Route>
-					<Route path="/stocks" exact></Route>
-          			<Route path="/profile" exact ></Route>
-				</Switch>
-			</div>
-		</Router>
+        <Switch>
+          <Route path='/' exact></Route>
+          <Route path='/companies' exact></Route>
+          <NewsCollection>
+            <ListNews>
+              <Route path='/market-news' exact component={ListNews}></Route>
+            </ListNews>
+          </NewsCollection>
+          <Route path='/stocks' exact></Route>
+          <Route path='/profile' exact></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
