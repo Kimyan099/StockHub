@@ -1,27 +1,30 @@
 import React, { useState, useContext } from 'react';
 import { NewsContext } from './NewsContext';
+import NewsBlock from './NewsBlock';
 
-const ListNews = (props) => {
+const ListNews = () => {
   const [news] = useContext(NewsContext);
-  console.log('hello');
-
   return (
-    <div>
+    <div style={listNewsStyle}>
       {news.map((newsBlock) => (
         <div>
-          <img style={imageStyle} src={newsBlock.image}></img>
-          <p>{newsBlock.headline}</p>
-          <a href=''>Read More</a>
-          <br></br>
+          <NewsBlock
+            key={newsBlock.id}
+            image={newsBlock.image}
+            headline={newsBlock.headline}
+          />
         </div>
       ))}
     </div>
   );
 };
 
-const imageStyle = {
-  width: '30%',
-  height: 'auto',
+const listNewsStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'left',
+  flexWrap: 'wrap',
+  gap: '20px',
 };
 
 export default ListNews;
