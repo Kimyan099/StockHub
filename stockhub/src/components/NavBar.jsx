@@ -5,6 +5,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import './NavBar.css';
 import { IconContext } from 'react-icons/lib';
 
+
+
 function NavBar() {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
@@ -63,6 +65,7 @@ function NavBar() {
 				</ul>
 			</div>
 		</div>
+
 		</IconContext.Provider>
 	);
 }
