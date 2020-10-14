@@ -23,7 +23,7 @@ function StockMarketWidget() {
         "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
         "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
         "symbolActiveColor": "rgba(33, 150, 243, 0.12)"})
-        document.getElementById("myContainer").appendChild(script)})
+        document.getElementById("myContainer").appendChild(script)}, [])
 
     return (
         <div id="myContainer">
