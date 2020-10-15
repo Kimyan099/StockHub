@@ -9,7 +9,18 @@ function NavBar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
+  const handleClick = () => {
+
+    try {
+      if (document.querySelector(".home__hero-text-wrapper") !== null) {
+        const text = document.querySelector(".home__hero-text-wrapper");
+        text.classList.toggle("active");
+      }
+    } catch (error) {
+      
+    }
+    setClick(!click)
+  };
 
   const closeMobileMenu = () => setClick(false);
 

@@ -33,7 +33,7 @@ function HeroSection({
                 <ul className='list-container'>
                   <div className='list-item'>
                 <div className='top-line'>{topLine}</div>
-                <h1 className={lightText ? 'heading' : 'heading dark'}>
+                <h1 className={lightText ? 'heading' : 'heading'}>
                   {headline}
                 </h1>
                 <p
