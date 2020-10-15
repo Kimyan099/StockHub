@@ -26,4 +26,55 @@
 .newsLink:hover{
   color: #f00946;
 }
+
+.articleContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.articleContainer{
+  height:500px;
+  overflow:hidden;
+  background-color:white;
+  border-radius: 10px;
+}
   
+.CompanyName{
+  color:#f00946;
+  background-color:#1c2237;
+  padding-top:40px
+}
+
+.CompanyDetails{
+  color:#fff;
+  background-color:#1c2237;
+  padding-bottom :40px 
+}
+
+.diagramTitle{
+  text-align: center;
+  margin: auto;
+  background: #1c2237;
+  padding:40px;
+  color:white
+}
+
+.diagram{
+  text-align: center;
+  margin: auto;
+  background: #1c2237;
+  padding-bottom: 40px
+}
+
+.comapnyNewsTitle{
+  color:#f00946;
+  background-color:#fff;
+  padding-top:40px;
+  padding:40px
+}
+
+
+.newsContainer{
+  padding: 40px
+}
+

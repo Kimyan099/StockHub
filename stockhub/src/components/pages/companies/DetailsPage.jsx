@@ -27,7 +27,7 @@ const DetailsPage = (props) => {
 
     const renderNews = (article) => {
         return (
-            <div className="articleContainer" style={{height:"500px", overflow:"hidden", backgroundColor:"white", borderRadius: "10px"}}>
+            <div className="articleContainer">
                 <h2>
                     <a className="newsLink" href={article.url} >{article.headline} </a>
                 </h2>
@@ -40,6 +40,13 @@ const DetailsPage = (props) => {
         )
     }
 
+
+    const articleStyle = () => {
+        return (
+            {
+            }
+        )
+    }
     
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -67,15 +74,15 @@ const DetailsPage = (props) => {
 
     return (
     <div className="wholePage" style={{textAlign:"center"}}>
-        <h1 style={{color:"#f00946", backgroundColor:"#1c2237", paddingTop:"20px"}}>{props.name}</h1>
-        <h2 style={{color:"#fff", backgroundColor:"#1c2237", paddingBottom:"20px"}}>Company Details</h2>
+        <h1 className="CompanyName" >{props.name}</h1>
+        <h2 className="CompanyDetails">Company Details</h2>
         <div id="myContainer">
             <div className="tradingview-widget-container">
                 <div className="tradingview-widget-container__widget"></div>
             </div>
         </div>
-        <h1 style={{ textAlign: "center", margin: "auto", background: "#1c2237", padding: "40px", color:"white"}}>Diagram</h1>
-        <div className="diagram" style={{ textAlign: "center", margin: "auto", background: "#1c2237", paddingBottom: "40px"}}>
+        <h1 className="diagramTitle" >Diagram</h1>
+        <div className="diagram">
             <TradingViewWidget
             symbol={symbol}
             locale="eng"
@@ -85,9 +92,8 @@ const DetailsPage = (props) => {
             style='3'
         />
         </div>
-        <h1 style={{color:"#f00946", backgroundColor:"#fff", paddingTop:"40px"}}>Company News</h1>
-        <br></br>
-        <div className="newsContainer" style={{ padding: "40px" }}>
+        <h1 className="comapnyNewsTitle" >Company News</h1>
+        <div className="newsContainer">
             {news.map((article) => renderNews(article))}
         </div>
 
