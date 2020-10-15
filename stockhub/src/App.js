@@ -51,7 +51,7 @@ function App() {
 					path='/details/:symbol'
 					render={(props) => <DetailsPage {...props} name={companyName} />}
 				/>
-				 <NewsCollection>
+			<NewsCollection>
           <Route exact path='/market-news' component={ListNews} />
           <Route exact path='/market-news/:newsId' component={NewsDetailed} />
 		  </NewsCollection>
