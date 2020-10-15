@@ -11,22 +11,15 @@ function NavBar() {
 
   const handleClick = () => {
 
-    // try {
-    //   if (document.querySelector(".home__hero-text-wrapper") !== null) {
-        
-    //   }
+    try {
+      if (document.querySelector(".home__hero-text-wrapper") !== null) {
+        const text = document.querySelector(".home__hero-text-wrapper");
+        text.classList.toggle("active");
+      }
+    } catch (error) {
       
-    // } catch (error) {
-      
-
-    // }
-    
-    const text = document.querySelector(".home__hero-text-wrapper");
-    text.classList.toggle("active");
-
-  
+    }
     setClick(!click)
-  
   };
 
   const closeMobileMenu = () => setClick(false);
