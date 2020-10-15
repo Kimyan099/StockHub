@@ -2,9 +2,9 @@ import React, {useState, useContext} from 'react';
 import {StockContext} from './StockContext'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { CompaniesContext } from './companies/GetCompanies'
-import {Button} from './Button'
-import styled from 'styled-components'
+import { CompaniesContext } from './pages/companies/GetCompanies';
+import {Button} from './ui/Button';
+import styled from 'styled-components';
 
 const StockSearchBar = () => {
 

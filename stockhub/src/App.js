@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { StockData } from './components/StockContext';
-import { CompanyProvider } from './components/companies/GetCompanies';
+import { CompanyProvider } from './components/pages/companies/GetCompanies';
 import Home from './components/pages/HomePage/Home';
-import NavBar from './components/NavBar';
+import NavBar from './components/ui/NavBar';
 import Stocks from './components/Stocks';
-import CompanyFinder from './components/companies/Companies';
+import CompanyFinder from './components/pages/companies/Companies';
 import Footer from './components/pages/Footer/Footer';
-import DetailsPage from './components/companies/DetailsPage';
+import DetailsPage from './components/pages/companies/DetailsPage';
 import Profile from './components/pages/ProfilePage/Profile';
-import ListNews from './components/MarketNews/ListNews';
-import { NewsCollection } from './components/MarketNews/NewsContext';
-import NewsDetailed from './components/MarketNews/NewsDetailed';
+import ListNews from './components/pages/MarketNews/ListNews';
+import { NewsCollection } from './components/pages/MarketNews/NewsContext';
+import NewsDetailed from './components/pages/MarketNews/NewsDetailed';
 
 function App() {
   const [companyName, setCompanyName] = useState('');

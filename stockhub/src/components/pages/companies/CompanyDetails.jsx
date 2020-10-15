@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, Route } from 'react-router-dom';
-import { Button } from '../Button';
-import DetailsPage from '../companies/DetailsPage'
-import SingleStockWidget from "../SingleStockWidget"
+import { Button } from '../../ui/Button';
+import DetailsPage from './DetailsPage'
+import SingleStockWidget from "../../ui/SingleStockWidget"
 
 
 

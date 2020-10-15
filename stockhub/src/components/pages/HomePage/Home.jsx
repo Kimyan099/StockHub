@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import HeroSection from '../../HeroSection';
+import HeroSection from './HeroSection';
 import { homeObjOne } from './Data';
 
 function Home() {

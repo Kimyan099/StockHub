@@ -1,8 +1,8 @@
 import React from 'react';
 import './HeroSection.css';
 import { Link } from 'react-router-dom';
-import { Button } from './Button';
-import StockMarketWidget from './StockMarketWidget';
+import { Button } from '../../ui/Button';
+import StockMarketWidget from '../../ui/StockMarketWidget';
 
 
 function HeroSection({

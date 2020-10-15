@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import { Button } from '../../Button';
 import { Link } from 'react-router-dom';
 import { RiExchangeDollarFill } from 'react-icons/ri';
 import {
@@ -13,7 +12,7 @@ import {
 
 function Footer() {
 	return (
-		<div className='footer-container'>
+		<footer className='footer-container'>
 			{/* <section className='footer-subscription'>
 				<p className='footer-subscription-heading'>
 					Join our exclusive membership to receive the latest news and trends
@@ -37,27 +36,27 @@ function Footer() {
 				<div className='footer-link-wrapper'>
 					<div className='footer-link-items'>
 						<h2>About Us</h2>
-						<Link to='/sign-up'>How it works</Link>
-						<Link to='/'>Testimonials</Link>
-						<Link to='/'>Careers</Link>
-						<Link to='/'>Investors</Link>
-						<Link to='/'>Terms of Service</Link>
+						<Link to='/temp'>How it works</Link>
+						<Link to='/temp'>Testimonials</Link>
+						<Link to='/temp'>Careers</Link>
+						<Link to='/temp'>Investors</Link>
+						<Link to='/temp'>Terms of Service</Link>
 					</div>
 					<div className='footer-link-items'>
 						<h2>Contact Us</h2>
-						<Link to='/'>Contact</Link>
-						<Link to='/'>Support</Link>
-						<Link to='/'>Destinations</Link>
-						<Link to='/'>Sponsorships</Link>
+						<Link to='/temp'>Contact</Link>
+						<Link to='/temp'>Support</Link>
+						<Link to='/temp'>Destinations</Link>
+						<Link to='/temp'>Sponsorships</Link>
 					</div>
 				</div>
 				<div className='footer-link-wrapper'>
 					<div className='footer-link-items'>
 						<h2>Videos</h2>
-						<Link to='/'>Submit Video</Link>
-						<Link to='/'>Ambassadors</Link>
-						<Link to='/'>Agency</Link>
-						<Link to='/'>Influencer</Link>
+						<Link to='/temp'>Submit Video</Link>
+						<Link to='/temp'>Ambassadors</Link>
+						<Link to='/temp'>Agency</Link>
+						<Link to='/temp'>Influencer</Link>
 					</div>
 					<div className='footer-link-items'>
 						<h2>Social Media</h2>
@@ -123,7 +122,7 @@ function Footer() {
 					</div>
 				</div>
 			</section>
-		</div>
+		</footer>
 	);
 }
 
