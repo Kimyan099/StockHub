@@ -13,6 +13,7 @@ import Profile from './components/pages/ProfilePage/Profile';
 import ListNews from './components/pages/MarketNews/ListNews';
 import { NewsCollection } from './components/pages/MarketNews/NewsContext';
 import NewsDetailed from './components/pages/MarketNews/NewsDetailed';
+import Temp from './components/pages/temp/Temp';
 
 function App() {
   const [companyName, setCompanyName] = useState('');
@@ -53,6 +54,7 @@ function App() {
           <Route exact path='/market-news' component={ListNews} />
           <Route exact path='/market-news/:newsId' component={NewsDetailed} />
         </NewsCollection>
+        <Route exact path='/temp' component={Temp} />
       </div>
       <Footer />
     </Router>

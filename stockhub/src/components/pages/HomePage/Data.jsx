@@ -5,7 +5,7 @@ export const homeObjOne = {
     topLine: 'Exclusive Access',
     headline: 'Unlimited Transactions with zero fees',
     description:
-      'Get all the latest stock trades, companies, news with visulized grafs and details via real-time data, in one place',
+      'Get all the latest news, companies and stock trades with visulized grafs and details via real-time data, in one place',
     buttonLabel: 'Get Started',
     imgStart: '',
 

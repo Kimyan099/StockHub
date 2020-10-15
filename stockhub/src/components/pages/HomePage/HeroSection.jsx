@@ -5,6 +5,7 @@ import { Button } from '../../ui/Button';
 import StockMarketWidget from '../../ui/StockMarketWidget';
 
 
+
 function HeroSection({
   lightBg,
   topLine,
@@ -45,7 +46,7 @@ function HeroSection({
                 >
                   {description}
                 </p>
-                <Link to='/sign-up'>
+                <Link to='/stocks'>
                   <Button buttonSize='btn--wide' buttonColor='blue'>
                     {buttonLabel}
                   </Button>

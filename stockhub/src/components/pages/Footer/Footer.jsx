@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { RiExchangeDollarFill } from 'react-icons/ri';
 import {
@@ -34,6 +35,7 @@ function Footer() {
 			</section> */}
 			<div className='footer-links'>
 				<div className='footer-link-wrapper'>
+					
 					<div className='footer-link-items'>
 						<h2>About Us</h2>
 						<Link to='/temp'>How it works</Link>
@@ -60,10 +62,10 @@ function Footer() {
 					</div>
 					<div className='footer-link-items'>
 						<h2>Social Media</h2>
-						<Link to='/'>Instagram</Link>
-						<Link to='/'>Facebook</Link>
-						<Link to='/'>Youtube</Link>
-						<Link to='/'>Twitter</Link>
+						<a href='https://www.instagram.com/' target='_blank'>Instagram</a>
+						<a href='https://www.facebook.com/' target='_blank'>Facebook</a>
+						<a href='https://www.youtube.com/' target='_blank'>Youtube</a>
+						<a href='https://www.twitter.com/' target='_blank'>Twitter</a>
 					</div>
 				</div>
 			</div>
@@ -77,48 +79,46 @@ function Footer() {
 					</div>
 					<small className='website-rights'>StockHub © 2020</small>
 					<div className='social-icons'>
-						<Link
+						<a
 							className='social-icon-link'
-							to='/'
+							href='https://www.facebook.com/'
 							target='_blank'
 							aria-label='Facebook'
 						>
 							<FaFacebook />
-						</Link>
-						<Link
+						</a>
+						<a
 							className='social-icon-link'
-							to='/'
+							href='https://www.instagram.com/'
 							target='_blank'
 							aria-label='Instagram'
 						>
 							<FaInstagram />
-						</Link>
-						<Link
+						</a>
+						<a
 							className='social-icon-link'
-							to={
-								'/'
-							}
+							href={'https://www.youtube.com/'}
 							target='_blank'
 							aria-label='Youtube'
 						>
 							<FaYoutube />
-						</Link>
-						<Link
+						</a>
+						<a
 							className='social-icon-link'
-							to='/'
+							href='https://www.twitter.com/'
 							target='_blank'
 							aria-label='Twitter'
 						>
 							<FaTwitter />
-						</Link>
-						<Link
+						</a>
+						<a
 							className='social-icon-link'
-							to='/'
+							href='https://www.linkedin.com/'
 							target='_blank'
 							aria-label='LinkedIn'
 						>
 							<FaLinkedin />
-						</Link>
+						</a>
 					</div>
 				</div>
 			</section>
