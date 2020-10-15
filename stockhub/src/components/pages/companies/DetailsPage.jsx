@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import TradingViewWidget from "react-tradingview-widget";
 import "./CompanyNews.css";
-import styled from "styled-components";
 
 
 
