@@ -120,6 +120,10 @@
     z-index: 1;
   }
 
+  .nav-menu.item.active :hover {
+    color: #f00946;
+  }
+
 
 
   .nav-links {
@@ -141,13 +145,10 @@
   .nav-item:hover {
     border-top: 5px;
     border-color: black;
-    /* background-color: white; */
   }
 
   .nav-item {
     width: 100%;
-    /* background-color: black; */
-
   }
 
   .navbar-logo {

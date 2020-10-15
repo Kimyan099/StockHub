@@ -11,16 +11,18 @@ function NavBar() {
 
   const handleClick = () => {
 
-    try {
-      if (document.querySelector(".home__hero-text-wrapper") !== null) {
-        const text = document.querySelector(".home__hero-text-wrapper");
-        text.classList.toggle("active")
-      }
+    // try {
+    //   if (document.querySelector(".home__hero-text-wrapper") !== null) {
+        
+    //   }
       
-    } catch (error) {
+    // } catch (error) {
       
-    }
+
+    // }
     
+    const text = document.querySelector(".home__hero-text-wrapper");
+    text.classList.toggle("active");
 
   
     setClick(!click)
