@@ -21,9 +21,6 @@ function App() {
     setCompanyName(name);
   };
 
-	const changeCompanyName = (name) => {
-		setCompanyName(name);
-	};
 
 	return (
 		<Router>
@@ -54,25 +51,14 @@ function App() {
 					path='/details/:symbol'
 					render={(props) => <DetailsPage {...props} name={companyName} />}
 				/>
+				 <NewsCollection>
+          <Route exact path='/market-news' component={ListNews} />
+          <Route exact path='/market-news/:newsId' component={NewsDetailed} />
+		  </NewsCollection>
 			</div>
 			<Footer />
 		</Router>
 	);
-
-        </NewsCollection>
-        <Route path='/profile' exact></Route>
-        <StockData>
-          <Route path='/stocks' component={Stocks}></Route>
-        </StockData>
-        <Route path='/' exact component={Home}></Route>
-        <Route
-          path='/details/:symbol'
-          render={(props) => <DetailsPage {...props} name={companyName} />}
-        />
-      </div>
-      <Footer />
-    </Router>
-  );
 
 }
 
