@@ -1,25 +1,27 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import StockSearchBar from "./StockSearchBar";
 import { StockContext } from "./StockContext";
 import TradingViewWidget from "react-tradingview-widget";
 
-import SingleStockWidget from "./SingleStockWidget";
-
 const Stocks = (props) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const [stock] = useContext(StockContext);
 
   return (
-    <div>
+    <div style={{textAlign:'center', backgroundColor: '#1c2237'}}>
       <StockSearchBar></StockSearchBar>
-      <SingleStockWidget symbol={stock}></SingleStockWidget>
-
+      <br></br>
+      <br></br>
       <TradingViewWidget
         symbol={stock}
         locale="eng"
         width="1000"
         height="500"
-        theme='dark'
+        theme='Dark'
       />
     </div>
   );

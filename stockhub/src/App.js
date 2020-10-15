@@ -32,6 +32,9 @@ function App() {
                 <CompanyFinder changeCompanyName={changeCompanyName} />
               )}
             ></Route>
+			 <StockData>
+          <Route path='/stocks' component={Stocks}></Route>
+        </StockData>
           </CompanyProvider>
           <Route path='/' exact></Route>
           <Route path='/companies' exact></Route>
@@ -40,9 +43,7 @@ function App() {
 
         <Route path='/profile' component={Profile} exact></Route>
 
-        <StockData>
-          <Route path='/stocks' component={Stocks}></Route>
-        </StockData>
+       
         <Route path='/' exact component={Home}></Route>
         <Route
           path='/details/:symbol'
