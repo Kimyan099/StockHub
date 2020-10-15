@@ -1,8 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
 import NewsBlock from './NewsBlock';
 
 const ListNews = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [news] = useContext(NewsContext);
   return (
     <div style={listNewsStyle}>
