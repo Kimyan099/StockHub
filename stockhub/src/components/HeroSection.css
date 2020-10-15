@@ -44,6 +44,7 @@
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+  transition: all 1s ease-out;
 }
 
 .top-line {
@@ -98,6 +99,13 @@ img {
   display: inline-block;
 }
 
+@media screen and (max-width: 768px) {
+  .list-item {
+    margin-left: 10px;
+
+  }
+}
+
 @media screen and (max-width: 991px) {
   .container {
     padding-right: 30px;
@@ -106,8 +114,11 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .home__hero-text-wrapper {
+  .home__hero-text-wrapper.active {
     padding-bottom: 65px;
+    margin-top: 200px;
+    transition: all 1s ease;
+    
   }
 
   .col {
