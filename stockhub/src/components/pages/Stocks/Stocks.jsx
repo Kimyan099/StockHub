@@ -14,8 +14,6 @@ const Stocks = (props) => {
   return (
     <div style={{textAlign:'center', backgroundColor: '#1c2237'}}>
       <StockSearchBar></StockSearchBar>
-      <br></br>
-      <br></br>
       <TradingViewWidget
         symbol={stock}
         locale="eng"

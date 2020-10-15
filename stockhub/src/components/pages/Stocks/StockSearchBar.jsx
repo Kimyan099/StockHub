@@ -10,13 +10,13 @@ const StockSearchBar = () => {
 
    const WrapperDiv = styled.div`
     
-    background-color: white;
+    /* background-color: white;
     border-radius: 10px;
     height: 50px;
     width: 300px;
     margin-top: 15px;
-    align-items: center;
-    text-align: center;
+    align-items: center; */
+    //text-align: center;
    `
 
   const [companies] = useContext(CompaniesContext);
@@ -28,7 +28,12 @@ const StockSearchBar = () => {
 
     const changeSymbol = (value) =>{
         console.log(value)
-        changeStockSymbol(value.symbol  )
+        try{
+            changeStockSymbol(value.symbol)
+        }catch{
+            
+        }
+        
         //console.log(stock)
     }
 
@@ -39,8 +44,7 @@ const StockSearchBar = () => {
 
     return (
         <form onSubmit={updateSymbol} style={{display: 'inline-block'}}>
-            
-            <WrapperDiv>
+            <div style={wrapperStyle}>
                 <div style={{width: '200px', display: 'inline-block'}}>
                <Autocomplete
             onChange={(event, value) => changeSymbol(value)}
@@ -54,13 +58,23 @@ const StockSearchBar = () => {
                  {...params}  />}
                  /> 
                  </div>
-            </WrapperDiv>
+            </div>
             
         <br/>
         <Button buttonColor='red'>Search</Button>
         </form>
     )
 
+}
+
+const wrapperStyle = {
+    backgroundColor:"white",
+    borderRadius: "10px",
+    height: "50px",
+    width: "300px",
+    marginTop: "15px",
+    alignItems: "center",
+    textAlign: "center"
 }
 
 export default StockSearchBar
