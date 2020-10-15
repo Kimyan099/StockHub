@@ -6,6 +6,23 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
+.company-body {
+   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .company-body.active {
+    padding-bottom: 65px;
+    margin-top: 200px;
+    transition: all 1s ease;
+  }
+
+  .col {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
 @media (min-width: 800px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);

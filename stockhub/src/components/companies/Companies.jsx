@@ -31,7 +31,7 @@ const CompanyFinder = (props) => {
         let restOfTheWord = company.description.toLowerCase().slice(0);
         
         return (
-          <div style={{ textAlign: "center"}}>
+          <div className='companies-body'>
             <Link
               style={{ textDecoration: "none", color: "black" }}
               to={"/companies/" + company.symbol}
