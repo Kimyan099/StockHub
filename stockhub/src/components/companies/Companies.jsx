@@ -3,7 +3,8 @@ import { CompaniesContext } from "./GetCompanies";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
 import CompanyDetails from "./CompanyDetails";
-import "./CompanyGrid.css"
+import "./CompanyGrid.css";
+
 
 const CompanyFinder = (props) => {
   const [companies] = useContext(CompaniesContext);
@@ -35,13 +36,16 @@ const CompanyFinder = (props) => {
               style={{ textDecoration: "none", color: "black" }}
               to={"/companies/" + company.symbol}
             >
+              
               <CompanyDiv>
                 {firstLetter + restOfTheWord}
+                
                 <Route path={"/companies/" + company.symbol} exact>
                   <CompanyDetails symbol={company.symbol} changeCompanyName={props.changeCompanyName} />
                 </Route>
               </CompanyDiv>
             </Link>
+           
           </div>
         );
       } else {

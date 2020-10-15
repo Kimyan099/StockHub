@@ -13,7 +13,7 @@ export const CompanyProvider = (props) => {
     axios
       .get(`https://finnhub.io/api/v1/stock/symbol?exchange=US&token=${access_token}`)
       .then((res) => {
-        setCompanies(res.data.slice(80,1000));
+        setCompanies(res.data.slice(81,8500));
         console.log(res.data)
       });
   }, []);
