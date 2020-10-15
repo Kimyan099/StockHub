@@ -10,11 +10,16 @@ import CompanyFinder from './components/companies/Companies';
 import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/companies/DetailsPage';
 import Profile from './components/pages/ProfilePage/Profile';
-
+import ListNews from './components/MarketNews/ListNews';
+import { NewsCollection } from './components/MarketNews/NewsContext';
+import NewsDetailed from './components/MarketNews/NewsDetailed';
 
 
 function App() {
-	const [companyName, setCompanyName] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const changeCompanyName = (name) => {
+    setCompanyName(name);
+  };
 
 	const changeCompanyName = (name) => {
 		setCompanyName(name);
@@ -53,6 +58,22 @@ function App() {
 			<Footer />
 		</Router>
 	);
+
+        </NewsCollection>
+        <Route path='/profile' exact></Route>
+        <StockData>
+          <Route path='/stocks' component={Stocks}></Route>
+        </StockData>
+        <Route path='/' exact component={Home}></Route>
+        <Route
+          path='/details/:symbol'
+          render={(props) => <DetailsPage {...props} name={companyName} />}
+        />
+      </div>
+      <Footer />
+    </Router>
+  );
+
 }
 
 export default App;
