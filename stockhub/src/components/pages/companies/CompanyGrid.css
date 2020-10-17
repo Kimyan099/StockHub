@@ -36,3 +36,11 @@
   }
 }
 
+.inputField{
+    margin: 30px;
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    height:30px
+}
+
