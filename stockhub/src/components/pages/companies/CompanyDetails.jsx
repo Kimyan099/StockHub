@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, Route } from 'react-router-dom';
 import { Button } from '../../ui/Button';
 import SingleStockWidget from "../../ui/SingleStockWidget";
-
+import "./CompanyDetails.css"
 
 
 const CompanyDetails = (props) => {
@@ -31,15 +31,15 @@ const CompanyDetails = (props) => {
 
 
   let content = (
-    <div style={{backgroundColor:"#fff"}}>
-       <img alt="LOGO" src={imgUrl} style={{margin:"20px", width:"150px", height:"150px"}}></img> 
+    <div className="companyCard">
+       <img className="companyLogo" alt="LOGO" src={imgUrl}></img> 
        <SingleStockWidget  symbol={symbol}></SingleStockWidget>
 
        <br/>
-      <p style={{backgroundColor:"#fff"}}>Since {company.ipo}</p>
-      <p style={{backgroundColor:"#fff"}}>Country: {company.country}</p>
-      <p style={{backgroundColor:"#fff"}}>Field: {company.finnhubIndustry}</p>
-      <div style={{marginTop: "10px", backgroundColor:"#fff"}}>
+      <p>Since {company.ipo}</p>
+      <p>Country: {company.country}</p>
+      <p>Field: {company.finnhubIndustry}</p>
+      <div className="detailsButton">
       <Link to={`/details/${symbol}`}>
           <Button onClick={props.changeCompanyName.bind(this, company.name)}  buttonSize='btn--wide' buttonColor='blue'>
             Details
