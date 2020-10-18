@@ -36,11 +36,21 @@
     display: flex;
     align-items: center;
   }
+
   
   .navbar-logo:hover {
     color: #fff;
     text-decoration: none !important;
-  
+
+
+
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+
   }
   
   .navbar-icon {
