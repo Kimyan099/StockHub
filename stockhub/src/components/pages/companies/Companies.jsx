@@ -54,6 +54,14 @@ const CompanyFinder = (props) => {
     } else {return null}  
   };
 
+
+
+  const CompnayPage = styled.div`
+    text-align: center;
+    margin: auto;
+    background: #1c2237;
+   `;
+
   const CompanyDiv = styled.div`
     padding: 10px;
     width: 350px;
@@ -70,27 +78,24 @@ const CompanyFinder = (props) => {
   `;
 
 
+  //TODO style refactor
 
   let content = (
     <React.Fragment>
-      <div style={{ textAlign: "center", margin: "auto", background: "#1c2237" }}>
+      <CompnayPage >
         <input className="inputField"
-          style={{
-            margin: "30px",
-            width: "600px",
-            background: "#fff",
-            borderRadius: "10px",
-            height:"30px"
-            }}
           type="text"
           onChange={handleChange}
         />
         <div className="cards">
           {companies.map((company) => renderSearched(company))}
         </div>
-      </div>
+      </CompnayPage>
     </React.Fragment>
   );
+
+
+
 
   return content;
 };

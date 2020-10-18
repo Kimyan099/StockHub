@@ -2,13 +2,14 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
+
 
 .company-body {
    text-align: center;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .company-body.active {
@@ -34,3 +35,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.inputField{
+    margin: 30px;
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    height:30px
+}
+

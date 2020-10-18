@@ -40,13 +40,6 @@ const DetailsPage = (props) => {
         )
     }
 
-
-    const articleStyle = () => {
-        return (
-            {
-            }
-        )
-    }
     
     useEffect(() => {
         window.scrollTo(0, 0)
