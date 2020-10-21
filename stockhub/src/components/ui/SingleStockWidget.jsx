@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const SingleStockWidget = (props) => {
+
+  const container = useRef(null);
+
   const widgetCreator = (symbol) => {
     const outerDiv = document.createElement("div");
 
@@ -20,9 +23,8 @@ const SingleStockWidget = (props) => {
     outerDiv.appendChild(script);
     outerDiv.style.pointerEvents = "none";
 
-    const container = document.getElementById("myContainer");
-    container.innerHTML = "";
-    container.appendChild(outerDiv);
+    container.current.innerHTML = "";
+    container.current.appendChild(outerDiv);
   };
 
   useEffect(() => {
@@ -31,7 +33,8 @@ const SingleStockWidget = (props) => {
 
   return (
     <div>
-      <div id="myContainer">
+      <div
+      ref={container}>
         <div className="tradingview-widget-container">
           <div className="tradingview-widget-container__widget"></div>
         </div>
