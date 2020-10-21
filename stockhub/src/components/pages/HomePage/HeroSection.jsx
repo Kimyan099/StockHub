@@ -13,8 +13,7 @@ function HeroSection({
   lightTextDesc,
   headline,
   description,
-  buttonLabel,
-  imgStart
+  buttonLabel
 }) {
   return (
     <>
@@ -22,13 +21,6 @@ function HeroSection({
         className={lightBg ? 'home__hero-section' : 'home__hero-section darkBg'}
       >
         <div className='container'>
-          <div
-            className='row home__hero-row'
-            style={{
-              display: 'flex',
-              flexDirection: imgStart === 'start' ? 'row-reverse' : 'row'
-            }}
-          >
             <div className='col'>
               <div className='home__hero-text-wrapper'>
                 <ul className='list-container'>
@@ -58,11 +50,8 @@ function HeroSection({
                 </ul>
               </div>
             </div>
-            <div className='col'>
-            </div>
           </div>
           </div>
-        </div>
     </>
   );
 }
