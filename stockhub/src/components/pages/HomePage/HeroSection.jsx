@@ -13,8 +13,7 @@ function HeroSection({
   lightTextDesc,
   headline,
   description,
-  buttonLabel,
-  imgStart
+  buttonLabel
 }) {
   return (
     <>
