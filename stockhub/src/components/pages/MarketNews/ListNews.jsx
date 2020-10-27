@@ -1,17 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
 import NewsBlock from './NewsBlock';
+import './ListNews.css';
 
 const ListNews = () => {
-  
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   const [news] = useContext(NewsContext);
-  return (
-    <div style={listNewsStyle}>
-      {news.map((newsBlock) => (
+  const [search, setSearch] = useState('');
+
+  const update = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const filter = (newsBlock) => {
+    if (newsBlock.headline.toLowerCase().includes(search.toLowerCase())) {
+      return (
         <div>
           <NewsBlock
             id={newsBlock.id}
@@ -21,17 +27,16 @@ const ListNews = () => {
             url={newsBlock.url}
           />
         </div>
-      ))}
+      );
+    }
+  };
+
+  return (
+    <div>
+      <input className='search' type='text' onChange={update} />
+      <div className='cards'>{news.map((newsBlock) => filter(newsBlock))}</div>
     </div>
   );
-};
-
-const listNewsStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'left',
-  flexWrap: 'wrap',
-  gap: '20px',
 };
 
 export default ListNews;

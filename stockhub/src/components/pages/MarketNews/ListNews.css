@@ -1,0 +1,17 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search {
+  background-color: white;
+  border-radius: 10px;
+  height: 30px;
+  width: 300px;
+  margin-top: 15px;
+  align-items: center;
+  text-align: center;
+}
