@@ -54,6 +54,8 @@ const CompanyFinder = (props) => {
     } else {return null}  
   };
 
+
+
   const CompnayPage = styled.div`
     text-align: center;
     margin: auto;
@@ -76,19 +78,12 @@ const CompanyFinder = (props) => {
   `;
 
 
-
+  //TODO style refactor
 
   let content = (
     <React.Fragment>
       <CompnayPage >
         <input className="inputField"
-          style={{
-            margin: "30px",
-            width: "600px",
-            background: "#fff",
-            borderRadius: "10px",
-            height:"30px"
-            }}
           type="text"
           onChange={handleChange}
         />
