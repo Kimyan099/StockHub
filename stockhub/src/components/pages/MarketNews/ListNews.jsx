@@ -33,8 +33,12 @@ const ListNews = () => {
 
   return (
     <div>
-      <input className='search' type='text' onChange={update} />
-      <div className='cards'>{news.map((newsBlock) => filter(newsBlock))}</div>
+      <div className='search-div'>
+        <input className='search' type='text' onChange={update} />
+      </div>
+      <div className='elements'>
+        {news.map((newsBlock) => filter(newsBlock))}
+      </div>
     </div>
   );
 };
