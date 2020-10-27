@@ -26,4 +26,15 @@
   .form-group {
     margin-bottom: 10px;
   }
+
+  .links {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+  }
 }
