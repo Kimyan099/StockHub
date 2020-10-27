@@ -1,13 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
-
 import './NewsBlock.css';
 import { Link } from 'react-router-dom';
 
 const NewsBlock = (props) => {
-	const newsId = '/market-news/' + props.id;
-
+  const newsId = '/market-news/' + props.id;
 
   return (
     <div>

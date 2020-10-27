@@ -1,40 +1,42 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
 import NewsBlock from './NewsBlock';
 import './ListNews.css';
 
 const ListNews = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+  const [news] = useContext(NewsContext);
+  const [search, setSearch] = useState('');
 
-	const [news] = useContext(NewsContext);
-	return (
-		<div className='market-news-container'>
-			<div style={listNewsStyle}>
-				{news.map((newsBlock) => (
-					<div>
-						<NewsBlock
-							id={newsBlock.id}
-							image={newsBlock.image}
-							headline={newsBlock.headline}
-							summary={newsBlock.summary}
-							url={newsBlock.url}
-						/>
-					</div>
-				))}
-			</div>
-		</div>
-	);
-};
+  const update = (e) => {
+    setSearch(e.target.value);
+  };
 
-const listNewsStyle = {
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'left',
-	flexWrap: 'wrap',
-  gap: '20px',
-  paddingBottom: '80px',
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const filter = (newsBlock) => {
+    if (newsBlock.headline.toLowerCase().includes(search.toLowerCase())) {
+      return (
+        <div>
+          <NewsBlock
+            id={newsBlock.id}
+            image={newsBlock.image}
+            headline={newsBlock.headline}
+            summary={newsBlock.summary}
+            url={newsBlock.url}
+          />
+        </div>
+      );
+    }
+  };
+
+  return (
+    <div>
+      <input className='search' type='text' onChange={update} />
+      <div className='cards'>{news.map((newsBlock) => filter(newsBlock))}</div>
+    </div>
+  );
 };
 
 export default ListNews;
