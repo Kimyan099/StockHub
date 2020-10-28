@@ -16,6 +16,8 @@ import NewsDetailed from './components/pages/MarketNews/NewsDetailed';
 import Temp from './components/pages/temp/Temp';
 import LoginPage from './components/pages/ProfilePage/Register/LoginPage'
 import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage'
+import {CurrentUser} from "./components/pages/ProfilePage/Register/UserContext"
+
 
 function App() {
   const [companyName, setCompanyName] = useState('');
@@ -31,6 +33,7 @@ function App() {
 
   return (
     <Router>
+      <CurrentUser>
       <div>
         <NavBar userName={loggedInUser}/>
         <Switch>
@@ -66,6 +69,7 @@ function App() {
         <Route exact path='/login' component={LoginPage} /*changeLonggedInUser={changeLonggedInUser()}*//>
         <Route exact path='/register' component={RegisterPage}/>
       </div>
+      </CurrentUser>
       <Footer />
     </Router>
   );

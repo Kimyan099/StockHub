@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RiExchangeDollarFill } from 'react-icons/ri';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './NavBar.css';
 import { IconContext } from 'react-icons/lib';
+import { UserContext } from "../pages/ProfilePage/Register/UserContext"
 
 function NavBar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [name, setName] = useContext(UserContext);
+
 
   const handleClick = () => {
 
@@ -95,7 +98,7 @@ function NavBar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Logged in as: {props.userName}
+                Logged in as: {name}
               </Link>
             </div>
           </ul>

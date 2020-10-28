@@ -1,9 +1,10 @@
-import React, {useEffect, useState } from "react";
+import React, {useEffect, useState, useContext } from "react";
 import { div, input } from "react-bootstrap";
 import "./LoginPage.css";
 import { Button } from "../../../ui/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "./UserContext"
 
 
 
@@ -11,6 +12,8 @@ const LoginPage = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [userName, setUserName] = useState("test");
+    const [name, setName] = useContext(UserContext);
+
 
 
     function handleSubmit(event) {
@@ -22,6 +25,7 @@ const LoginPage = (props) => {
       .then((response) => {
         console.log(response.data);
         setUserName(response.data);
+        setName(response.data);
         //props.changeLonggedInUser().bind(userName);
       })
   }
