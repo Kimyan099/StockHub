@@ -1,0 +1,23 @@
+.stock-button-container {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.button-buy {
+    margin: 5px;
+}
+
+.button-sell {
+    margin: 5px;
+}
+
+.price-reduce {
+    color:  #f00946;
+    background:  #1c2237;
+}
+
+.price-increase {
+    color: green;
+    background:  #1c2237;
+}

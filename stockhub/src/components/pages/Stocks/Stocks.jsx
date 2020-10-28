@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from "react";
 import StockSearchBar from "./StockSearchBar";
 import { StockContext } from "./StockContext";
 import TradingViewWidget from "react-tradingview-widget";
+import StockBuySell from "./StockBuySell";
+import StockDetails from "./StockDetails";
 
 const Stocks = (props) => {
 
@@ -13,7 +15,7 @@ const Stocks = (props) => {
 
   return (
     <div style={{textAlign:'center', backgroundColor: '#1c2237'}}>
-      <StockSearchBar></StockSearchBar>
+      <StockSearchBar />
       <TradingViewWidget
         symbol={stock}
         locale="eng"
@@ -21,6 +23,8 @@ const Stocks = (props) => {
         height="500"
         theme='Dark'
       />
+      <StockDetails />
+      <StockBuySell />
     </div>
   );
 };
