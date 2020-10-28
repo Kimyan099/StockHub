@@ -14,6 +14,8 @@ import ListNews from './components/pages/MarketNews/ListNews';
 import { NewsCollection } from './components/pages/MarketNews/NewsContext';
 import NewsDetailed from './components/pages/MarketNews/NewsDetailed';
 import Temp from './components/pages/temp/Temp';
+import LoginPage from './components/pages/ProfilePage/Register/LoginPage'
+import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage'
 
 function App() {
   const [companyName, setCompanyName] = useState('');
@@ -55,6 +57,8 @@ function App() {
           <Route exact path='/market-news/:newsId' component={NewsDetailed} />
         </NewsCollection>
         <Route exact path='/temp' component={Temp} />
+        <Route exact path='/login' component={LoginPage}/>
+        <Route exact path='/register' component={RegisterPage}/>
       </div>
       <Footer />
     </Router>
