@@ -3,7 +3,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import { StockContext } from './StockContext';
 import axios from 'axios';
 import './Stock.css';
-import TechnicalAnalysisWidget from './../../ui/TechnicalAnalysisWidget'
 import CompanyProfileWidget from './../../ui/CompanyProfileWidget'
 
 function StockDetails() {

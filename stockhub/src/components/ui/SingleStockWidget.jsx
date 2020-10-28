@@ -27,9 +27,9 @@ const SingleStockWidget = (props) => {
     container.current.appendChild(outerDiv);
   };
 
-  useEffect(() => {
-    widgetCreator(props.symbol);
-  }, [props.symbol]);
+    useEffect(() => {
+      widgetCreator(props.symbol);
+    }, [props.symbol]);
 
   return (
     <div>
