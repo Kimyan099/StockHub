@@ -18,7 +18,6 @@ const RegisterPage = (props) => {
         console.log(200)
         axios.post('http://localhost:8080/add', {name : "test", email : email, password : password})
             .then(response => console.log(response.data));
-
       }
     }
 
