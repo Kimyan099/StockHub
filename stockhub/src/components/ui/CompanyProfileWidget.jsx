@@ -12,6 +12,7 @@ const CompanyProfileWidget = (props) => {
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js'
     script.async = true;
     script.innerHTML = JSON.stringify({"symbol": `${symbol}`,
+ 
     "width": 1000,
     "height": 400,
     "colorTheme": "dark",

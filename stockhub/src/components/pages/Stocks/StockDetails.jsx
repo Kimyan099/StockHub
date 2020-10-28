@@ -36,10 +36,10 @@ function StockDetails() {
 
 	return (
 		<div className="stock-detail-card">
-			<p className={className}> {currentPrice}</p>
-			<p className={className}>{percentageChange}</p>
-			<div>{symbol}</div>
 			<CompanyProfileWidget symbol={symbol}/>
+            {/* <p className={className}> {currentPrice}</p> */}
+			{/* <p className={className}>{percentageChange}</p> */}
+			{/* <div>{symbol}</div> */}
 		</div>
 		
 	);
