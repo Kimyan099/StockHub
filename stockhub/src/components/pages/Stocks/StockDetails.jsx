@@ -3,9 +3,11 @@ import React, { useState, useContext, useEffect } from 'react';
 import { StockContext } from './StockContext';
 import axios from 'axios';
 import './Stock.css';
+import TechnicalAnalysisWidget from './../../ui/TechnicalAnalysisWidget'
+import CompanyProfileWidget from './../../ui/CompanyProfileWidget'
 
 function StockDetails() {
-	const [symbol, setSymbol] = useContext(StockContext);
+	const [symbol] = useContext(StockContext);
 	const [currentPrice, setCurrentPrice] = useState(0);
 	const [openPrice, setOpenPrice] = useState(0);
 	const [percentageChange, setPercentageChange] = useState(0);
@@ -34,10 +36,13 @@ function StockDetails() {
 	};
 
 	return (
-		<div>
+		<div className="stock-detail-card">
 			<p className={className}> {currentPrice}</p>
 			<p className={className}>{percentageChange}</p>
+			<div>{symbol}</div>
+			<CompanyProfileWidget symbol={symbol}/>
 		</div>
+		
 	);
 }
 

@@ -21,3 +21,9 @@
     color: green;
     background:  #1c2237;
 }
+
+.stock-detail-card{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
