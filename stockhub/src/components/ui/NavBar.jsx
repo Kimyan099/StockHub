@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import './NavBar.css';
 import { IconContext } from 'react-icons/lib';
 
-function NavBar() {
+function NavBar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -89,6 +89,15 @@ function NavBar() {
                 Profile
               </Link>
             </div>
+            <div className='nav-item'>
+              <Link
+                to='/profile'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Logged in as: {props.userName}
+              </Link>
+            </div>
           </ul>
         </div>
       </div>
@@ -97,3 +106,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

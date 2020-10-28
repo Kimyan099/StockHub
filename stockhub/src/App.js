@@ -22,11 +22,17 @@ function App() {
   const changeCompanyName = (name) => {
     setCompanyName(name);
   };
+  const [loggedInUser, setLoggedInUser] = useState("Guest");
+
+  const changeLonggedInUser = (userName) => {
+    setLoggedInUser(userName);
+  }
+
 
   return (
     <Router>
       <div>
-        <NavBar />
+        <NavBar userName={loggedInUser}/>
         <Switch>
           <CompanyProvider>
             <Route
@@ -57,7 +63,7 @@ function App() {
           <Route exact path='/market-news/:newsId' component={NewsDetailed} />
         </NewsCollection>
         <Route exact path='/temp' component={Temp} />
-        <Route exact path='/login' component={LoginPage}/>
+        <Route exact path='/login' component={LoginPage} /*changeLonggedInUser={changeLonggedInUser()}*//>
         <Route exact path='/register' component={RegisterPage}/>
       </div>
       <Footer />
