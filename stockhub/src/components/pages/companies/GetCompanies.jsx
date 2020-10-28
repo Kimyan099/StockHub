@@ -12,7 +12,7 @@ export const CompanyProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://finnhub.io/api/v1/stock/symbol?exchange=US&token=${access_token}`)
+      .get(`http://localhost:8080/companies`)
       .then((res) => {
         setCompanies(res.data.slice(81,1000));
         console.log(res.data)

@@ -1,0 +1,40 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 180px 0;
+    background-color: #1c2237;
+    text-align: center;
+  }
+
+  .Login form {
+    margin: auto;
+    max-width: 320px;
+  }
+
+  .title {
+    color: #f00946;
+    margin-bottom: 50px;
+  }
+
+  label {
+    color: white;
+  }
+
+  .button {
+    margin-top: 40px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .links {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+  }
+}
