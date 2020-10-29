@@ -46,9 +46,9 @@ function Profile() {
 					{/* <li>
 						<p>Symbol | price | amount</p>
 					</li> */}
-					<li>
+					{/* <li>
 						<p>AAPL | 134,6 | 3</p>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 		</div>
