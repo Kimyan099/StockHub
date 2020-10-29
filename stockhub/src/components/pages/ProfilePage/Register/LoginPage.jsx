@@ -26,7 +26,6 @@ const LoginPage = (props) => {
         console.log(response.data);
         setUserName(response.data);
         setName(response.data);
-        //props.changeLonggedInUser().bind(userName);
       })
   }
 
