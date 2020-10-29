@@ -3,15 +3,15 @@ import '../ProfilePage/Profile.css';
 
 function Profile() {
 	return (
-		<div class='container emp-profile'>
-			<div class='row'>
-				<div class='col-1'>
-					<div class='profile-img'>
+		<div className='container emp-profile'>
+			<div className='row'>
+				<div className='col-1'>
+					<div className='profile-img'>
 						<img src={require('../../../img/bird.jpg')} />
 					</div>
-					<div class='col-2'>
+					<div className='col-2'>
 						<br />
-						<ul class='profile-work'>
+						<ul className='profile-work'>
 							<li>PROFILE</li>
 							<li>
 								<a href=''>Overview</a>
@@ -25,16 +25,23 @@ function Profile() {
 						</ul>
 					</div>
 				</div>
-				<div class='col-3'>
-					<div class='profile-head'>
+				<div className='col-3'>
+					<div className='profile-head'>
 						<h5>Duckee Duu</h5>
 						<h6>Web Developer and Designer</h6>
 						<p class='proile-rating'>
 							RANKINGS : <span>8/10</span>
 						</p>
-					
 					</div>
 				</div>
+				<ul className='personal-stock-container'>
+					{/* <li>
+						<p>Symbol | price | amount</p>
+					</li> */}
+					<li>
+						<p>AAPL | 134,6 | 3</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 	);

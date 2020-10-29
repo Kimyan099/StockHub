@@ -6,10 +6,12 @@
 
 .button-buy {
     margin: 5px;
+    margin-bottom: 50px;
 }
 
 .button-sell {
     margin: 5px;
+    margin-bottom: 50px;
 }
 
 .price-reduce {
@@ -27,4 +29,9 @@
     justify-content: center;
     margin-top: 50px;
     /* margin-left: 75px; */
+}
+
+.stock-page-item-container {
+    text-align:'center';
+    background-color: '#1c2237';
 }
