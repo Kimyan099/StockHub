@@ -4,6 +4,7 @@ import "./LoginPage.css";
 import { Button } from "../../../ui/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 
 
@@ -14,31 +15,19 @@ const RegisterPage = (props) => {
     const [password, setPassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
     const [isExist, setIsExist] = useState(false)
+    const { handleSubmit, register, errors } = useForm();
+    const [route, setRoute] = useState("/register");
 
-    const isUserExist = (email) => {
-      axios.post(`http://localhost:8080/user`, null, {params:{email}})
-        .then(response => {
-          console.log(response.data)
-          setIsExist(response.data);
-        });
-    }
 
-    const register = () => {
-      if (password === passwordAgain && password.length > 0 && email.length > 0 && name.length > 0){
-        isUserExist(email)
-        if(!isExist){
-          axios.post('http://localhost:8080/add', {name : name, email : email, password : password})
-          .then(response => console.log(200));
-        }
+    const regist = () => {
+      if (password === passwordAgain && password.length > 0 && email.length > 0 && name.length > 0) {
+            axios.post('http://localhost:8080/add', {name : name, email : email, password : password})
+            .then(response => console.log(200));
+            setRoute("/login");
+          }
       }
-    }
+      
 
-
-
-
-    function handleSubmit(event) {
-      event.preventDefault();
-    }
   
     return (
       <div className="Login">
@@ -53,6 +42,7 @@ const RegisterPage = (props) => {
               onChange={e => setName(e.target.value)}
             />
           </FormGroup>
+          {errors.username && errors.username.message}
           <FormGroup controlId="email" bsSize="large">
             <label>Email</label>
             <br/>
@@ -62,6 +52,7 @@ const RegisterPage = (props) => {
               onChange={e => setEmail(e.target.value)}
             />
           </FormGroup>
+          {errors.email && errors.email.message}
           <FormGroup controlId="password" bsSize="large">
             <label>Password</label>
             <br/>
@@ -81,8 +72,8 @@ const RegisterPage = (props) => {
             />
           </FormGroup>
           <br></br>
-          <Link to={"/login"} onClick={() => register()}>
-          <Button className="button" block buttonSize='btn--wide' buttonColor='blue'>
+          <Link to={route} onClick={() => regist()}>
+          <Button className="button" block buttonSize='btn--wide' buttonColor='blue' type="submit"> 
             Register
           </Button>
           </Link>
