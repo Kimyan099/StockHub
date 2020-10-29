@@ -5,29 +5,29 @@ import { Button } from "../../../ui/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "./UserContext"
+import { useForm } from "react-hook-form";
 
 
 
 const LoginPage = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [userName, setUserName] = useState("test");
-    const [name, setName] = useContext(UserContext);
+    const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+    const [route, setRoute] = useState("/login");
+    const { handleSubmit, register, errors } = useForm();
 
 
-
-    function handleSubmit(event) {
-      event.preventDefault();
+    const checkIfCanLogIn = (event) => {
+      if (!isLoggedIn) {
+        axios.post(`http://localhost:8080/login`, null, {params: {email, password}})
+        .then((response) => {
+          console.log(response.data);
+          if (response.data != ""){ 
+            setName(response.data);
+            setIsLoggedIn(true);
+          }      
+        })
     }
-
-    const checkIfCanLogIn = () => {
-      axios.post(`http://localhost:8080/login`, null, {params: {email, password}})
-      .then((response) => {
-        console.log(response.data);
-        setUserName(response.data);
-        setName(response.data);
-        //props.changeLonggedInUser().bind(userName);
-      })
   }
 
   
@@ -35,7 +35,7 @@ const LoginPage = (props) => {
       <div className="Login">
           <h1 className="title" >Login</h1>
           
-        <form onSubmit={handleSubmit}>
+        <div>
           <div controlId="email" bsSize="large">
             <label>Email</label>
             <br/>
@@ -44,6 +44,7 @@ const LoginPage = (props) => {
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
+             {errors.email && errors.email.message}
           </div>
 
           <div controlId="password" bsSize="large">
@@ -57,12 +58,12 @@ const LoginPage = (props) => {
           </div>
 
           <br></br>
-          <Link to={"/login"} >
-          <Button className="button" block buttonSize='btn--wide' buttonColor='blue' onClick={() => checkIfCanLogIn()}>
+          <Link to={"/"} >
+          <Button className="button" block buttonSize='btn--wide' buttonColor='blue' onClick={checkIfCanLogIn}>
             Login
           </Button>
           </Link>
-        </form>
+        </div>
         <div className="links">
             <Link className="link" to="/register">
                 Register

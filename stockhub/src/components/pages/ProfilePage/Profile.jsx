@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../ProfilePage/Profile.css';
+import { UserContext } from "../ProfilePage/Register/UserContext";
+
 
 function Profile() {
+	const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+
+
 	return (
 		<div className='container emp-profile'>
 			<div className='row'>
@@ -21,6 +26,9 @@ function Profile() {
 							</li>
 							<li>
 								<a href=''>Porftolio</a>
+							</li>
+							<li>
+								<a onClick={() => setIsLoggedIn(false)} href='/'>Logout</a>
 							</li>
 						</ul>
 					</div>

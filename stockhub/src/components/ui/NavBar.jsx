@@ -9,7 +9,37 @@ import { UserContext } from "../pages/ProfilePage/Register/UserContext"
 function NavBar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [name, setName] = useContext(UserContext);
+  const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+
+
+
+  const checkIfLoggedIn = () => {
+    if (isLoggedIn) {
+      return (
+        <div className='nav-item'>
+        <Link
+          to='/profile'
+          className='nav-links'
+          onClick={closeMobileMenu}
+        >
+        {"Logged in as: " + name}
+        </Link>
+      </div>
+      )
+    } else {
+      return (
+        <div className='nav-item'>
+        <Link
+          to='/login'
+          className='nav-links'
+          onClick={closeMobileMenu}
+        >
+        {"Login"}
+        </Link>
+      </div>
+      )
+    }
+  }
 
 
   const handleClick = () => {
@@ -83,24 +113,7 @@ function NavBar(props) {
                 Stocks
               </Link>
             </div>
-            <div className='nav-item'>
-              <Link
-                to='/profile'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Profile
-              </Link>
-            </div>
-            <div className='nav-item'>
-              <Link
-                to='/profile'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Logged in as: {name}
-              </Link>
-            </div>
+            {checkIfLoggedIn()}
           </ul>
         </div>
       </div>
