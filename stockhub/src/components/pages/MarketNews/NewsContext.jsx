@@ -8,11 +8,9 @@ export const NewsCollection = (props) => {
   const token = 'bu2rf9f48v6pqlhnnvtg';
 
   useEffect(() => {
-    axios
-      .get(`https://finnhub.io/api/v1/news?category=general&token=${token}`)
-      .then((res) => {
-        setNews(res.data);
-      });
+    axios.get(`http://localhost:8080/news`).then((res) => {
+      setNews(res.data);
+    });
   }, []);
 
   //console.log('context news: ', [news]);
