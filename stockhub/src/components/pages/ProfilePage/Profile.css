@@ -97,3 +97,10 @@ body{
 .file btn btn-lg btn-primary {
     color: black;
 }
+
+.personal-stock-container {
+    display: flex;
+    border-radius: 5px;
+    border-color: black;
+    color: black;
+}

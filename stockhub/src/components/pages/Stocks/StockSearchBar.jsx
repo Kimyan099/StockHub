@@ -43,7 +43,11 @@ const StockSearchBar = () => {
     }
 
     return (
-        <form onSubmit={updateSymbol} style={{display: 'inline-block'}}>
+        
+        // <div style={{position:"relative"}}>
+        // <div style={{display: "inline-block"}}>
+
+            <form onSubmit={updateSymbol} style={{display: 'inline-block'}}>
             <div style={wrapperStyle}>
                 <div style={{width: '200px', display: 'inline-block'}}>
                <Autocomplete
@@ -58,11 +62,15 @@ const StockSearchBar = () => {
                  {...params}  />}
                  /> 
                  </div>
+                 
             </div>
-            
-        <br/>
-        <Button buttonColor='red'>Search</Button>
+            <div style={{display: "inline-block"}}>
+            <Button buttonColor='red'>Search</Button>
+            </div>
         </form>
+
+        // <div/>
+       
     )
 
 }
