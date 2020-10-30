@@ -21,11 +21,15 @@ const RegisterPage = (props) => {
 
     const regist = () => {
       if (password === passwordAgain && password.length > 0 && email.length > 0 && name.length > 0) {
+          axios.post('http://localhost:8080/user', null, {params: {email: email}}) 
+          .then(response => { if(!response.data) {
             axios.post('http://localhost:8080/add', {name : name, email : email, password : password})
             .then(response => console.log(200));
+            
             setRoute("/login");
-          }
+          }})
       }
+    }
       
 
   
