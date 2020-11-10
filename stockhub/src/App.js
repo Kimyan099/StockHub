@@ -17,6 +17,7 @@ import Temp from './components/pages/temp/Temp';
 import LoginPage from './components/pages/ProfilePage/Register/LoginPage'
 import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage'
 import {CurrentUser} from "./components/pages/ProfilePage/Register/UserContext"
+import ProfilePage from './components/pages/ProfilePage/NewProfilePage/ProfiePage';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         <Route exact path='/temp' component={Temp} />
         <Route exact path='/login' component={LoginPage} /*changeLonggedInUser={changeLonggedInUser()}*//>
         <Route exact path='/register' component={RegisterPage}/>
+        <Route exact path='/newProfile'> <ProfilePage/> </Route>
       </div>
       </CurrentUser>
       <Footer />
