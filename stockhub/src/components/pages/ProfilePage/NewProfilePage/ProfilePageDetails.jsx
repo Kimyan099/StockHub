@@ -1,7 +1,7 @@
 import React from "react";
 import ProfilePageHeader from "./ProfilePageDetailsHeader"
 import "../NewProfilePage/DetailsStyle.css"
-
+import Client from "./Client"
 
 const ProfileDetails = (props) => {
 
@@ -9,6 +9,7 @@ const ProfileDetails = (props) => {
     <div className="App">
       <div className="Wrapper">
         <ProfilePageHeader/>
+        <Client/>
       </div>
     </div>
   );

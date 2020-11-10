@@ -2,6 +2,10 @@ import { Link, Route } from "react-router-dom";
 import React, {useContext} from 'react';
 import '../NewProfilePage/ProfilePageStyle.css';
 import ProfileDetails from "./ProfilePageDetails"
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import StarsIcon from '@material-ui/icons/Stars';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const ProfilePage = (props) => {
 
@@ -16,19 +20,18 @@ const ProfilePage = (props) => {
 
 		<div className='profile-menu-body'>
 			
-			<div className="cards">	
-				<div className="menu-title">
+			<div className="profile-cards">	
 			<Link to="/newProfile/profileDetails">
-					<img class="logo" src="https://w7.pngwing.com/pngs/304/275/png-transparent-user-profile-computer-icons-profile-miscellaneous-logo-monochrome.png"></img>
+				<div className="menu-title">
+					<AccountCircleIcon fontSize="large" style={{color:"#1c2237"}}></AccountCircleIcon>
 					<br></br>
 					<div className="menu-text">Profile Details</div>
-			</Link>
 				</div>
+			</Link>
 				
-
 			<Link>
 				<div className="menu-title">
-				<img class="logo" src="https://w7.pngwing.com/pngs/304/275/png-transparent-user-profile-computer-icons-profile-miscellaneous-logo-monochrome.png"></img>
+					<MonetizationOnIcon fontSize="large" style={{color:"#1c2237"}}></MonetizationOnIcon>
 					<br></br>
 					<div className="menu-text">Trade</div>
 				</div>
@@ -36,7 +39,7 @@ const ProfilePage = (props) => {
 
 			<Link>
 				<div className="menu-title">
-				<img class="logo" src="https://w7.pngwing.com/pngs/304/275/png-transparent-user-profile-computer-icons-profile-miscellaneous-logo-monochrome.png"></img>
+					<StarsIcon fontSize="large" style={{color:"#1c2237"}}></StarsIcon>
 					<br></br>
 					<div className="menu-text">Favourites</div>
 				</div>
@@ -44,15 +47,13 @@ const ProfilePage = (props) => {
 
 			<Link>
 				<div className="menu-title">
-				<img class="logo" src="https://w7.pngwing.com/pngs/304/275/png-transparent-user-profile-computer-icons-profile-miscellaneous-logo-monochrome.png"></img>
+					<ExitToAppIcon fontSize="large" style={{color:"#1c2237"}}></ExitToAppIcon>
 					<br></br>
 					<div className="menu-text">Logout</div>
 				</div>
 			</Link>
 			</div>
-			<Route path="/newProfile/profileDetails" exact>
-				<p>aaaaaaaa</p>
-			</Route>
+			<ProfileDetails/>
 		</div>
 	</div>
 </React.Fragment>
