@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
 import NewsBlock from './NewsBlock';
+import NewsCategoryDropDown from './NewsCategoryDropDown';
 import './ListNews.css';
 
 const ListNews = () => {
@@ -35,6 +36,7 @@ const ListNews = () => {
     <div>
       <div className='search-div'>
         <input className='search' type='text' onChange={update} />
+        <NewsCategoryDropDown />
       </div>
       <div className='elements'>
         {news.map((newsBlock) => filter(newsBlock))}
