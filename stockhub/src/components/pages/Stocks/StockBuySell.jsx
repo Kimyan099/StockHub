@@ -19,18 +19,26 @@ function StockBuySell() {
 					)
 				.then((res) => {
 					setCurrentPrice(res.data.c);
-					axios.post(`http://localhost:8080/buy`, null, {params: {symbol:stock, price:currentPrice }})
+					console.log("this is stock getch data");
+					console.log(res);
+					axios.post(`http://localhost:8080/buy`, {symbol:stock, price:currentPrice })
         				.then((response) => {
 							console.log(response);
-				})})}
+							console.log("its here");
+				})})
+	}
+
+	const update = () => {
+		buyStock()
+		console.log("object");
+	  };
+			
 
 	return (
 		<div>
 			<div className='stock-button-container'>
                 <div className='button-buy'>
-					<Link to={"/"} onClick={() => buyStock()}>
-				    <Button buttonColor='green'>Buy</Button>
-					</Link>
+				    <Button buttonColor='green' onClick={update}>Buy</Button>
                 <div className='button-sell'>
 				<Button buttonColor='red'>Sell</Button>
                 </div>
