@@ -18,7 +18,7 @@ function NavBar(props) {
       return (
         <div className='nav-item'>
         <Link
-          to='/profile'
+          to='/newProfile'
           className='nav-links'
           onClick={closeMobileMenu}
         >

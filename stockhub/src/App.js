@@ -54,10 +54,7 @@ function App() {
           <Route path='/companies' exact></Route>
           <Route path='/market-news' exact></Route>
         </Switch>
-
-        <Route path='/profile' component={Profile} exact></Route>
-
-       
+   
         <Route path='/' exact component={Home}></Route>
         <Route
           path='/details/:symbol'
