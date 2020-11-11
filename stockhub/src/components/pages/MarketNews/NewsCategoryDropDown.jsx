@@ -48,31 +48,25 @@ export default function NewsCategoryDropDown() {
   };
 
   const updateNewsList = () => {
-    console.log('currentCategory:', currentCategory);
-    console.log('currentOrderType:', currentOrderType);
-
-    setTimeout(() => {
-      axios
-        .get(
-          `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
-        )
-        .then((res) => {
-          setNews(res.data);
-        });
-    }, 1000);
+    axios
+      .get(
+        `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
+      )
+      .then((res) => {
+        setNews(res.data);
+      });
   };
 
   const setCategory = (category) => {
     setCurrentCategory(category);
-    console.log('INPUT', category);
-    console.log('PREcurrentCategory: ', currentCategory);
-    //currentCategory = category;
+    setCurrentCategory(category);
+    console.log('Category Parameter: ', category);
+    console.log('Category Context: ', currentCategory);
     updateNewsList();
   };
 
   const setOrder = (orderType) => {
     setCurrentOrderType(orderType);
-    //currentOrderType = orderType;
     updateNewsList();
   };
 
@@ -104,7 +98,7 @@ export default function NewsCategoryDropDown() {
       </Button>
       <Menu
         id='simple-menu'
-        anchorElSort={anchorElSort}
+        anchorEl={anchorElSort}
         keepMounted
         open={Boolean(anchorElSort)}
         onClose={handleCloseSort}
