@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
+import { NewsCategoryContext } from './NewsCategoryContext';
+import { NewsOrderContext } from './NewsOrderContext';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,9 +12,8 @@ export default function NewsCategoryDropDown() {
   const [anchorElSort, setAnchorElSort] = React.useState(null);
   const [categories, setCategories] = useState([]);
   const [news, setNews] = useContext(NewsContext);
-
-  let currentCategory = 'allnews';
-  let currentOrderType = 'desc';
+  const [currentCategory, setCurrentCategory] = useContext(NewsCategoryContext);
+  const [currentOrderType, setCurrentOrderType] = useContext(NewsOrderContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -49,24 +50,29 @@ export default function NewsCategoryDropDown() {
   const updateNewsList = () => {
     console.log('currentCategory:', currentCategory);
     console.log('currentOrderType:', currentOrderType);
-    axios
-      .get(
-        `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
-      )
-      .then((res) => {
-        setNews(res.data);
-      });
+
+    setTimeout(() => {
+      axios
+        .get(
+          `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
+        )
+        .then((res) => {
+          setNews(res.data);
+        });
+    }, 1000);
   };
 
   const setCategory = (category) => {
-    //setCurrentCategory(category);
-    currentCategory = category;
+    setCurrentCategory(category);
+    console.log('INPUT', category);
+    console.log('PREcurrentCategory: ', currentCategory);
+    //currentCategory = category;
     updateNewsList();
   };
 
   const setOrder = (orderType) => {
-    //setCurrentOrderType(orderType);
-    currentOrderType = orderType;
+    setCurrentOrderType(orderType);
+    //currentOrderType = orderType;
     updateNewsList();
   };
 
