@@ -1,7 +1,7 @@
 import { Link, Route } from "react-router-dom";
 import React, {useContext} from 'react';
 import '../NewProfilePage/ProfilePageStyle.css';
-import ProfileDetails from "./ProfilePageDetails"
+import ProfileDetails from "./ProfileDetails/ProfilePageDetails"
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import StarsIcon from '@material-ui/icons/Stars';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';

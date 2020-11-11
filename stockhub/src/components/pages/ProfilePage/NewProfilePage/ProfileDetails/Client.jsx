@@ -15,7 +15,7 @@ import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import React, {useContext} from 'react';
-import { UserContext } from "../Register/UserContext"
+import { UserContext } from "../../Register/UserContext"
 
 
 const Client = (props) => {

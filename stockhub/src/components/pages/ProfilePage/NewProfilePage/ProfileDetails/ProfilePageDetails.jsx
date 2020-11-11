@@ -1,7 +1,7 @@
 import React from "react";
 import ProfilePageHeader from "./ProfilePageDetailsHeader"
-import "../NewProfilePage/DetailsStyle.css"
-import Client from "./Client"
+import "./DetailsStyle.css"
+import Client from "../ProfileDetails/Client"
 
 const ProfileDetails = (props) => {
 
