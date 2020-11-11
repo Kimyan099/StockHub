@@ -19,14 +19,14 @@ const StockSearchBar = () => {
 
 	const [companies] = useContext(CompaniesContext);
 
-	const [stock, changeStockSymbol] = useState('');
+	const [stockSymbol, setStockSymbol] = useState('');
 
 	const [contextStock, changeContextStock] = useContext(StockContext);
 
 	const changeSymbol = (value) => {
 		console.log(value);
 		try {
-			changeStockSymbol(value.symbol);
+			setStockSymbol(value.symbol);
 		} catch {}
 
 		//console.log(stock)
@@ -34,7 +34,7 @@ const StockSearchBar = () => {
 
 	const updateSymbol = (e) => {
 		e.preventDefault();
-		changeContextStock(stock);
+		changeContextStock(stockSymbol);
 	};
 
 	return (

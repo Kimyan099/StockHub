@@ -3,9 +3,9 @@ import React, { useState, createContext } from 'react';
 export const StockContext = createContext();
 
 export const StockData = (props) => {
-	const [stock, changeStock] = useState('AAPL');
+	const [stockSymbol, setStockSymbol] = useState('AAPL');
 	return (
-		<StockContext.Provider value={[stock, changeStock]}>
+		<StockContext.Provider value={[stockSymbol, setStockSymbol]}>
 			{props.children}
 		</StockContext.Provider>
 	);

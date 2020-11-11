@@ -5,26 +5,28 @@ import TradingViewWidget from 'react-tradingview-widget';
 import StockBuySell from './StockBuySell';
 import StockDetails from './StockDetails';
 import './Stock.css';
+import StockRecommendation from './StockRecommendation';
 
 const Stocks = (props) => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const [stock] = useContext(StockContext);
+	const [stockSymbol] = useContext(StockContext);
 
 	return (
 		<div style={{ textAlign: 'center', backgroundColor: '#1c2237' }}>
 			<StockSearchBar />
 			<StockDetails />
 			<TradingViewWidget
-				symbol={stock}
+				symbol={stockSymbol}
 				locale='eng'
 				width='1000'
 				height='500'
 				theme='Dark'
 			/>
-			<StockBuySell />
+      <StockRecommendation />
+			<StockBuySell/>
 		</div>
 	);
 };

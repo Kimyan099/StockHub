@@ -6,18 +6,20 @@ import axios from 'axios';
 
 function StockBuySell() {
 	const [currentPrice, setCurrentPrice] = useState(0);
-	const [stock] = useContext(StockContext);
+	const [stockSymbol] = useContext(StockContext);
+
+
 
 	const buyStock = () => {
 		axios
 			.get(
-				`https://finnhub.io/api/v1/quote?symbol=${stock}&token=bu21m3v48v6u9tetnbig`
+				`https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=bu21m3v48v6u9tetnbig`
 			)
 			.then((res) => {
 				setCurrentPrice(res.data.c);
 				axios
 					.post(`http://localhost:8080/buy`, {
-						symbol: stock,
+						symbol: stockSymbol,
 						price: currentPrice,
 					})
 					.then((response) => {});
