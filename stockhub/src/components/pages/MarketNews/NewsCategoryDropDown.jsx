@@ -7,8 +7,12 @@ import axios from 'axios';
 
 export default function NewsCategoryDropDown() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorElSort, setAnchorElSort] = React.useState(null);
   const [categories, setCategories] = useState([]);
   const [news, setNews] = useContext(NewsContext);
+
+  let currentCategory = 'allnews';
+  let currentOrderType = 'desc';
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -16,6 +20,14 @@ export default function NewsCategoryDropDown() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleClickSort = (event) => {
+    setAnchorElSort(event.currentTarget);
+  };
+
+  const handleCloseSort = () => {
+    setAnchorElSort(null);
   };
 
   useEffect(() => {
@@ -28,23 +40,34 @@ export default function NewsCategoryDropDown() {
     let upperCaseCategory =
       category.charAt(0).toUpperCase() + category.slice(1);
     return (
-      <MenuItem onClick={() => updateNewsList(category)}>
+      <MenuItem onClick={() => setCategory(category)}>
         {upperCaseCategory}
       </MenuItem>
     );
   };
 
-  const updateNewsList = (category) => {
-    axios.get(`http://localhost:8080/news/category/${category}`).then((res) => {
-      setNews(res.data);
-    });
-    console.log('onClick');
+  const updateNewsList = () => {
+    console.log('currentCategory:', currentCategory);
+    console.log('currentOrderType:', currentOrderType);
+    axios
+      .get(
+        `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
+      )
+      .then((res) => {
+        setNews(res.data);
+      });
   };
 
-  const updateToOriginalNews = () => {
-    axios.get(`http://localhost:8080/news`).then((res) => {
-      setNews(res.data);
-    });
+  const setCategory = (category) => {
+    //setCurrentCategory(category);
+    currentCategory = category;
+    updateNewsList();
+  };
+
+  const setOrder = (orderType) => {
+    //setCurrentOrderType(orderType);
+    currentOrderType = orderType;
+    updateNewsList();
   };
 
   return (
@@ -63,8 +86,25 @@ export default function NewsCategoryDropDown() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => updateToOriginalNews()}>All News</MenuItem>
+        <MenuItem onClick={() => setCategory('allnews')}>All News</MenuItem>
         <div>{categories.map((category) => getCategories(category))}</div>
+      </Menu>
+      <Button
+        aria-controls='simple-menu'
+        aria-haspopup='true'
+        onClick={handleClickSort}
+      >
+        Sort by time
+      </Button>
+      <Menu
+        id='simple-menu'
+        anchorElSort={anchorElSort}
+        keepMounted
+        open={Boolean(anchorElSort)}
+        onClose={handleCloseSort}
+      >
+        <MenuItem onClick={() => setOrder('asc')}>Ascending</MenuItem>
+        <MenuItem onClick={() => setOrder('desc')}>Descending</MenuItem>
       </Menu>
     </div>
   );
