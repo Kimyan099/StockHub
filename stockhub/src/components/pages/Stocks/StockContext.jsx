@@ -1,6 +1,6 @@
 import React,  {useState, createContext} from 'react'
 
-export const StockContext = createContext();
+export const    StockContext = createContext();
 
 export const StockData = props => {
     const [stock, changeStock] = useState('AAPL')
