@@ -15,10 +15,10 @@ import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import React, {useContext} from 'react';
-import { UserContext } from "../Register/UserContext"
+import { UserContext } from "../../Register/UserContext"
 
 
-const Client = (props) => {
+const Trades = (props) => {
     let profilePicture = "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190423100153-01-charlie-the-otter-file.jpg";
     const [name, setName, isLoggedIn, setIsLoggedIn, contextEmail, setContextEmail ] = useContext(UserContext);
 
@@ -102,4 +102,4 @@ const Client = (props) => {
 
 }
 
-export default Client;
+export default Trades;

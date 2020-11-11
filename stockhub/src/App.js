@@ -17,8 +17,8 @@ import LoginPage from './components/pages/ProfilePage/Register/LoginPage'
 import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage'
 import {CurrentUser} from "./components/pages/ProfilePage/Register/UserContext"
 import ProfilePage from './components/pages/ProfilePage/NewProfilePage/ProfiePage';
-import ProfileDetails from "./components/pages/ProfilePage/NewProfilePage/ProfilePageDetails"
-
+import ProfileDetails from "./components/pages/ProfilePage/NewProfilePage/ProfileDetails/ProfilePageDetails"
+import ProfilePageTrade from "./components/pages/ProfilePage/NewProfilePage/ProfileTrade/ProfilePageTrade"
 
 function App() {
   const [companyName, setCompanyName] = useState('');
@@ -69,7 +69,7 @@ function App() {
         <Route path='/newProfile'> <ProfilePage/> </Route>
         <Route path="/newProfile/profileDetails" component={ProfileDetails}/>
         <Route path="/newProfile/favourites" />
-        <Route path="/newProfile/trade" />
+        <Route path="/newProfile/trade" component={ProfilePageTrade} />
       </div>
       </CurrentUser>
       <Footer />
