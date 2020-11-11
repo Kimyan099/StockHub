@@ -69,7 +69,11 @@ function App() {
         <Route path='/newProfile'> <ProfilePage/> </Route>
         <Route path="/newProfile/profileDetails" component={ProfileDetails}/>
         <Route path="/newProfile/favourites" />
-        <Route path="/newProfile/trade" component={ProfilePageTrade} />
+       <StockData>
+            <Route path="/newProfile/trade" component={ProfilePageTrade} />
+       </StockData>
+        
+
       </div>
       </CurrentUser>
       <Footer />
