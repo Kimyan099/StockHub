@@ -2,7 +2,6 @@ import React ,{ useContext, useState } from 'react';
 import { Button } from '../../ui/Button';
 import './Stock.css';
 import { StockContext } from "./StockContext";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -19,18 +18,13 @@ function StockBuySell() {
 					)
 				.then((res) => {
 					setCurrentPrice(res.data.c);
-					console.log("this is stock getch data");
-					console.log(res);
 					axios.post(`http://localhost:8080/buy`, {symbol:stock, price:currentPrice })
         				.then((response) => {
-							console.log(response);
-							console.log("its here");
 				})})
 	}
 
 	const update = () => {
 		buyStock()
-		console.log("object");
 	  };
 			
 
