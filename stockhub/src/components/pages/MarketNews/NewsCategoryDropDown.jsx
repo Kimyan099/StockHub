@@ -8,7 +8,7 @@ import axios from 'axios';
 export default function NewsCategoryDropDown() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [categories, setCategories] = useState([]);
-  const { news, setNews } = useContext(NewsContext);
+  const [news, setNews] = useContext(NewsContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -28,7 +28,7 @@ export default function NewsCategoryDropDown() {
     let upperCaseCategory =
       category.charAt(0).toUpperCase() + category.slice(1);
     return (
-      <MenuItem onClick={updateNewsList(category)}>
+      <MenuItem onClick={() => updateNewsList(category)}>
         {upperCaseCategory}
       </MenuItem>
     );
@@ -38,6 +38,7 @@ export default function NewsCategoryDropDown() {
     axios.get(`http://localhost:8080/news/category/${category}`).then((res) => {
       setNews(res.data);
     });
+    console.log('onClick');
   };
 
   return (
@@ -47,7 +48,7 @@ export default function NewsCategoryDropDown() {
         aria-haspopup='true'
         onClick={handleClick}
       >
-        Open Menu
+        Filter Categories
       </Button>
       <Menu
         id='simple-menu'
