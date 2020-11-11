@@ -70,8 +70,10 @@ function App() {
         <Route exact path='/temp' component={Temp} />
         <Route exact path='/login' component={LoginPage} /*changeLonggedInUser={changeLonggedInUser()}*//>
         <Route exact path='/register' component={RegisterPage}/>
-        <Route exact path='/newProfile'> <ProfilePage/> </Route>
+        <Route path='/newProfile'> <ProfilePage/> </Route>
         <Route path="/newProfile/profileDetails" component={ProfileDetails}/>
+        <Route path="/newProfile/favourites" />
+        <Route path="/newProfile/trade" />
       </div>
       </CurrentUser>
       <Footer />

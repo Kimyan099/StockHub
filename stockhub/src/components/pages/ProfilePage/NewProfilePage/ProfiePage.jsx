@@ -6,10 +6,11 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import StarsIcon from '@material-ui/icons/Stars';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { UserContext } from "../Register/UserContext";
 
 const ProfilePage = (props) => {
 
-
+	const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
 
 	return (
 	<React.Fragment>
@@ -29,7 +30,7 @@ const ProfilePage = (props) => {
 				</div>
 			</Link>
 				
-			<Link>
+			<Link to="trade">
 				<div className="menu-title">
 					<MonetizationOnIcon fontSize="large" style={{color:"#1c2237"}}></MonetizationOnIcon>
 					<br></br>
@@ -37,23 +38,20 @@ const ProfilePage = (props) => {
 				</div>
 			</Link>
 
-			<Link>
+			<Link to="favourites">
 				<div className="menu-title">
 					<StarsIcon fontSize="large" style={{color:"#1c2237"}}></StarsIcon>
 					<br></br>
 					<div className="menu-text">Favourites</div>
 				</div>
 			</Link>
-
-			<Link>
 				<div className="menu-title">
 					<ExitToAppIcon fontSize="large" style={{color:"#1c2237"}}></ExitToAppIcon>
 					<br></br>
-					<div className="menu-text">Logout</div>
+					<a onClick={() => setIsLoggedIn(false)} href='/'>Logout</a>
 				</div>
-			</Link>
 			</div>
-			<ProfileDetails/>
+			
 		</div>
 	</div>
 </React.Fragment>
