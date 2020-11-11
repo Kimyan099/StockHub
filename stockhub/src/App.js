@@ -9,7 +9,6 @@ import Stocks from './components/pages/Stocks/Stocks';
 import CompanyFinder from './components/pages/companies/Companies';
 import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/pages/companies/DetailsPage';
-import Profile from './components/pages/ProfilePage/Profile';
 import ListNews from './components/pages/MarketNews/ListNews';
 import { NewsCollection } from './components/pages/MarketNews/NewsContext';
 import NewsDetailed from './components/pages/MarketNews/NewsDetailed';

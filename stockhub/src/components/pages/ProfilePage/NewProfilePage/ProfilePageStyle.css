@@ -7,7 +7,6 @@
     content: "Sorry, seems like your browser doesn't support display: grid. Below is the flexbox fallback.";
     display: block;
     padding: 2rem 2rem 0;
-    color: #ffffff;
     text-align: center;
   }
 }

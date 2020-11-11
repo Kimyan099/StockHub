@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 const LoginPage = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+    const [name, setName, isLoggedIn, setIsLoggedIn, contextEmail, setContextEmail ] = useContext(UserContext);
     const [route, setRoute] = useState("/login");
     const { handleSubmit, register, errors } = useForm();
 
@@ -24,6 +24,7 @@ const LoginPage = (props) => {
           console.log(response.data);
           if (response.data != ""){ 
             setName(response.data);
+            setContextEmail(email);
             setIsLoggedIn(true);
           }      
         })

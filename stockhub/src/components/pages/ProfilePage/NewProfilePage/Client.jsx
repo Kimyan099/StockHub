@@ -14,10 +14,13 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import React from 'react';
- 
+import React, {useContext} from 'react';
+import { UserContext } from "../Register/UserContext"
+
+
 const Client = (props) => {
     let profilePicture = "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190423100153-01-charlie-the-otter-file.jpg";
+    const [name, setName, isLoggedIn, setIsLoggedIn, contextEmail, setContextEmail ] = useContext(UserContext);
 
 
     return (
@@ -26,7 +29,7 @@ const Client = (props) => {
           <div><Avatar src={profilePicture} alt="Gajdos Tamás" style={{width: '100px', height:'100px' , marginRight: 10, display: 'inline-block', verticalAlign: 'middle'}}/></div>
           <div>
             <Typography variant="h4" component="h2">
-              Gajdos Tamás
+              {name}
             </Typography>
             <Typography component="p">
               1993.02.28
@@ -88,7 +91,7 @@ const Client = (props) => {
                 </ListItemIcon>
                 <ListItemText
                   primary="Email address"
-                  secondary="tamasgaj@gmail.com"
+                  secondary={contextEmail}
                 />
               </ListItem>
             </List>
