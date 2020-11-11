@@ -1,0 +1,76 @@
+.profilePage {
+  background: #1c2237;
+}
+
+@supports not (display: grid) {
+  body:before {
+    content: "Sorry, seems like your browser doesn't support display: grid. Below is the flexbox fallback.";
+    display: block;
+    padding: 2rem 2rem 0;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.header {
+  margin: 3vh 2vw;
+  text-align: center;
+  color: #1c2237;
+}
+
+.header h1,
+.header h2 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.profile-cards {
+  max-width: 1200px;
+  margin: auto auto auto auto;
+  display: grid;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-menu-body.active {
+    padding-bottom: 65px;
+    margin-top: 200px;
+    transition: all 1s ease;
+  }
+}
+
+@media (min-width: 800px) {
+  .profile-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1350px) {
+  .profile-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.menu-title {
+  font-size: x-large;
+  margin: 2vh 1vw;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  background: #fff;
+}
+
+.menu-title:hover {
+  background-color: grey;
+}
+
+.logo {
+  width: 70%;
+  height: 70%;
+  margin-bottom: 3vmax;
+}
+
+.menu-text {
+  color: #1c2237;
+}

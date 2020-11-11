@@ -17,6 +17,8 @@ import Temp from './components/pages/temp/Temp';
 import LoginPage from './components/pages/ProfilePage/Register/LoginPage'
 import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage'
 import {CurrentUser} from "./components/pages/ProfilePage/Register/UserContext"
+import ProfilePage from './components/pages/ProfilePage/NewProfilePage/ProfiePage';
+import ProfileDetails from "./components/pages/ProfilePage/NewProfilePage/ProfilePageDetails"
 
 
 function App() {
@@ -52,10 +54,7 @@ function App() {
           <Route path='/companies' exact></Route>
           <Route path='/market-news' exact></Route>
         </Switch>
-
-        <Route path='/profile' component={Profile} exact></Route>
-
-       
+   
         <Route path='/' exact component={Home}></Route>
         <Route
           path='/details/:symbol'
@@ -68,6 +67,10 @@ function App() {
         <Route exact path='/temp' component={Temp} />
         <Route exact path='/login' component={LoginPage} /*changeLonggedInUser={changeLonggedInUser()}*//>
         <Route exact path='/register' component={RegisterPage}/>
+        <Route path='/newProfile'> <ProfilePage/> </Route>
+        <Route path="/newProfile/profileDetails" component={ProfileDetails}/>
+        <Route path="/newProfile/favourites" />
+        <Route path="/newProfile/trade" />
       </div>
       </CurrentUser>
       <Footer />

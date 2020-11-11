@@ -1,0 +1,31 @@
+.Wrapper {
+  max-width: 1170px;
+  margin: auto;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.Header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  background: #fff;
+  z-index: 999;
+}
+
+.Header .Branding {
+  margin: 0;
+}
+
+.Header .Branding .Logo {
+  height: 40px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}

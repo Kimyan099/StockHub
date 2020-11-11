@@ -4,12 +4,9 @@
   display: grid;
 }
 
-
 .company-body {
-   text-align: center;
+  text-align: center;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .company-body.active {
@@ -36,11 +33,10 @@
   }
 }
 
-.inputField{
-    margin: 30px;
-    width: 600px;
-    background: #fff;
-    border-radius: 10px;
-    height:30px
+.inputField {
+  margin: 30px;
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  height: 30px;
 }
-
