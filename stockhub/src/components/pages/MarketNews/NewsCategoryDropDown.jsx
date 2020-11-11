@@ -41,6 +41,12 @@ export default function NewsCategoryDropDown() {
     console.log('onClick');
   };
 
+  const updateToOriginalNews = () => {
+    axios.get(`http://localhost:8080/news`).then((res) => {
+      setNews(res.data);
+    });
+  };
+
   return (
     <div>
       <Button
@@ -57,6 +63,7 @@ export default function NewsCategoryDropDown() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <MenuItem onClick={() => updateToOriginalNews()}>All News</MenuItem>
         <div>{categories.map((category) => getCategories(category))}</div>
       </Menu>
     </div>
