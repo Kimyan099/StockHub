@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default function NewsCategoryDropDown() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,6 +15,8 @@ export default function NewsCategoryDropDown() {
   const [news, setNews] = useContext(NewsContext);
   const [currentCategory, setCurrentCategory] = useContext(NewsCategoryContext);
   const [currentOrderType, setCurrentOrderType] = useContext(NewsOrderContext);
+
+  //let newCurrentCategory = 'allnews';
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -48,6 +51,7 @@ export default function NewsCategoryDropDown() {
   };
 
   const updateNewsList = () => {
+    console.log('Category Context in updateNews: ', currentCategory);
     axios
       .get(
         `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
@@ -57,24 +61,48 @@ export default function NewsCategoryDropDown() {
       });
   };
 
+  useEffect(() => {
+    console.log('Category Context in updateNews: ', currentCategory);
+    axios
+      .get(
+        `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
+      )
+      .then((res) => {
+        setNews(res.data);
+      });
+  }, [currentCategory, currentOrderType]);
+
   const setCategory = (category) => {
     setCurrentCategory(category);
-    setCurrentCategory(category);
+    //newCurrentCategory = category;
     console.log('Category Parameter: ', category);
     console.log('Category Context: ', currentCategory);
-    updateNewsList();
+    //updateNewsList();
   };
 
   const setOrder = (orderType) => {
     setCurrentOrderType(orderType);
-    updateNewsList();
+    //updateNewsList();
   };
+
+  const useStyles = makeStyles({
+    buttonStyle: {
+      color: 'black',
+      backgroundColor: 'white',
+      borderStyle: 'solid',
+      borderColor: 'black',
+      border: '1px',
+    },
+  });
+
+  const classes = useStyles();
 
   return (
     <div>
       <Button
         aria-controls='simple-menu'
         aria-haspopup='true'
+        className={classes.buttonStyle}
         onClick={handleClick}
       >
         Filter Categories
@@ -92,6 +120,7 @@ export default function NewsCategoryDropDown() {
       <Button
         aria-controls='simple-menu'
         aria-haspopup='true'
+        className={classes.buttonStyle}
         onClick={handleClickSort}
       >
         Sort by time
