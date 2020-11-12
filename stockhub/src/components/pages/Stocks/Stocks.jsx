@@ -2,10 +2,9 @@ import React, { useEffect, useContext } from 'react';
 import StockSearchBar from './StockSearchBar';
 import { StockContext } from './StockContext';
 import TradingViewWidget from 'react-tradingview-widget';
-import StockBuySell from './StockBuySell';
 import StockDetails from './StockDetails';
 import './Stock.css';
-import StockRecommendation from './StockRecommendation';
+import StockRecommendationBox from './StockRecommendationBox';
 
 const Stocks = (props) => {
 	useEffect(() => {
@@ -25,8 +24,7 @@ const Stocks = (props) => {
 				height='500'
 				theme='Dark'
 			/>
-      <StockRecommendation />
-			<StockBuySell/>
+      < StockRecommendationBox />
 		</div>
 	);
 };

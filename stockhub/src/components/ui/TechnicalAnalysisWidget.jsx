@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 function TechnicalAnalysisWidget() {
-	useEffect(() => {
+	useEffect((symbol) => {
 		const script = document.createElement('script');
 		script.src =
 			'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
@@ -11,11 +11,12 @@ function TechnicalAnalysisWidget() {
 			width: 425,
 			isTransparent: false,
 			height: 450,
-			symbol: 'NASDAQ:AAPL',
+			symbol: {symbol},
 			showIntervalTabs: true,
 			locale: 'en',
 			colorTheme: 'dark',
 		});
+		console.log("this is symbol: "+ symbol);
 		document.getElementById('myContainer').appendChild(script);
 	}, []);
 
