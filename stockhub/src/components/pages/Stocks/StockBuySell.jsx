@@ -52,7 +52,7 @@ function StockBuySell() {
           setStockImageLink(res.data.logo);
         } else {
           setStockImageLink(
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/50px-No_image_available.svg.png"
           );
 		}
 		buyStock()

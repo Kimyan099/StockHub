@@ -43,13 +43,23 @@ function StockRecommendation() {
 				`https://finnhub.io/api/v1/stock/recommendation?symbol=${stockSymbol}&token=bu21m3v48v6u9tetnbig`
 			)
 			.then((res) => {
-				const allData = res.data[0];
-				setBuy(allData.buy);
-				setSell(allData.sell);
-				setStrongBuy(allData.strongBuy);
-				setStrongSell(allData.strongSell);
-				setHold(allData.hold);
-				setPeriod(allData.period);
+				try {
+					const allData = res.data[0];
+					setBuy(allData.buy);
+					setSell(allData.sell);
+					setStrongBuy(allData.strongBuy);
+					setStrongSell(allData.strongSell);
+					setHold(allData.hold);
+					setPeriod(allData.period);
+				} catch {
+					setBuy(0);
+					setSell(0);
+					setStrongBuy(0);
+					setStrongSell(0);
+					setHold(0);
+					setPeriod(0);
+				}
+
 			});
 	}, [stockSymbol]);
 
