@@ -6,13 +6,20 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "./UserContext"
 import { useForm } from "react-hook-form";
+import { SmsOutlined } from "@material-ui/icons";
 
 
 
 const LoginPage = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName, isLoggedIn, setIsLoggedIn, contextEmail, setContextEmail ] = useContext(UserContext);
+    const [name, setName, 
+      isLoggedIn, setIsLoggedIn, 
+      contextEmail, setContextEmail,
+      contextAddress, setContextAddress,
+      contextPhoneNumber, setContextPhoneNumber,
+      contextMobileNumber, setContextMobileNumber
+       ] = useContext(UserContext);
     const [route, setRoute] = useState("/login");
     const { handleSubmit, register, errors } = useForm();
 
@@ -23,7 +30,10 @@ const LoginPage = (props) => {
         .then((response) => {
           console.log(response.data);
           if (response.data != ""){ 
-            setName(response.data);
+            setName(response.data.name);
+            setContextAddress(response.data.address);
+            setContextPhoneNumber(response.data.phoneNumber)
+            setContextMobileNumber(response.data.mobileNumber)
             setContextEmail(email);
             setIsLoggedIn(true);
           }      
