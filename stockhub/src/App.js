@@ -11,11 +11,14 @@ import Footer from './components/pages/Footer/Footer';
 import DetailsPage from './components/pages/companies/DetailsPage';
 import ListNews from './components/pages/MarketNews/ListNews';
 import { NewsCollection } from './components/pages/MarketNews/NewsContext';
+import { NewsCategoryCollection } from './components/pages/MarketNews/NewsCategoryContext';
+import { NewsOrderCollection } from './components/pages/MarketNews/NewsOrderContext';
 import NewsDetailed from './components/pages/MarketNews/NewsDetailed';
 import Temp from './components/pages/temp/Temp';
 import LoginPage from './components/pages/ProfilePage/Register/LoginPage';
 import RegisterPage from './components/pages/ProfilePage/Register/RegisterPage';
 import { CurrentUser } from './components/pages/ProfilePage/Register/UserContext';
+
 import ProfilePage from './components/pages/ProfilePage/NewProfilePage/ProfiePage';
 import ProfileDetails from './components/pages/ProfilePage/NewProfilePage/ProfileDetails/ProfilePageDetails';
 import ProfilePageTrade from './components/pages/ProfilePage/NewProfilePage/ProfileTrade/ProfilePageTrade';
@@ -59,9 +62,17 @@ function App() {
 						render={(props) => <DetailsPage {...props} name={companyName} />}
 					/>
 					<NewsCollection>
-						<Route exact path='/market-news' component={ListNews} />
-						<Route exact path='/market-news/:newsId' component={NewsDetailed} />
-					</NewsCollection>
+            <NewsCategoryCollection>
+              <NewsOrderCollection>
+                <Route exact path='/market-news' component={ListNews} />
+                <Route
+                  exact
+                  path='/market-news/:newsId'
+                  component={NewsDetailed}
+                />
+              </NewsOrderCollection>
+            </NewsCategoryCollection>
+          </NewsCollection>
 					<Route exact path='/temp' component={Temp} />
 					<Route
 						exact
