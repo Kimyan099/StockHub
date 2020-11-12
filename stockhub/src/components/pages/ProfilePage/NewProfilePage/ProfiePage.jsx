@@ -14,7 +14,7 @@ const ProfilePage = (props) => {
 	return (
 		<React.Fragment>
 			<div className='profilePage'>
-				<header class='header'>
+				<header className='header'>
 					<h2>Gajdos Tamás</h2>
 				</header>
 
