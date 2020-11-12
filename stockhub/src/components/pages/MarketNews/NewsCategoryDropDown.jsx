@@ -16,13 +16,13 @@ export default function NewsCategoryDropDown() {
   const [currentCategory, setCurrentCategory] = useContext(NewsCategoryContext);
   const [currentOrderType, setCurrentOrderType] = useContext(NewsOrderContext);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 
   const handleClickSort = (event) => {
     setAnchorElSort(event.currentTarget);

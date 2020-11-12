@@ -4,7 +4,7 @@ import axios from 'axios';
 export const NewsContext = createContext();
 
 export const NewsCollection = (props) => {
-  const [news, setNews] = useState([]);
+	const [news, setNews] = useState([]);
 
   useEffect(() => {
     axios
@@ -14,9 +14,9 @@ export const NewsCollection = (props) => {
       });
   }, []);
 
-  return (
-    <NewsContext.Provider value={[news, setNews]}>
-      {props.children}
-    </NewsContext.Provider>
-  );
+	return (
+		<NewsContext.Provider value={[news, setNews]}>
+			{props.children}
+		</NewsContext.Provider>
+	);
 };

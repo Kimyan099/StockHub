@@ -1,77 +1,89 @@
-import React, {useEffect, useState, useContext } from "react";
-import { div, input } from "react-bootstrap";
-import "./LoginPage.css";
-import { Button } from "../../../ui/Button";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { UserContext } from "./UserContext"
-import { useForm } from "react-hook-form";
-
-
+import React, { useEffect, useState, useContext } from 'react';
+import { div, input } from 'react-bootstrap';
+import './LoginPage.css';
+import { Button } from '../../../ui/Button';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { UserContext } from './UserContext';
+import { useForm } from 'react-hook-form';
 
 const LoginPage = (props) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName, isLoggedIn, setIsLoggedIn] = useContext(UserContext);
-    const [route, setRoute] = useState("/login");
-    const { handleSubmit, register, errors } = useForm();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [
+		name,
+		setName,
+		isLoggedIn,
+		setIsLoggedIn,
+		contextEmail,
+		setContextEmail,
+	] = useContext(UserContext);
+	const [route, setRoute] = useState('/login');
+	const { handleSubmit, register, errors } = useForm();
 
+	const checkIfCanLogIn = (event) => {
+		if (!isLoggedIn) {
+			axios
+				.post(`http://localhost:8080/login`, null, {
+					params: { email, password },
+				})
+				.then((response) => {
+					console.log(response.data);
+					if (response.data != '') {
+						setName(response.data);
+						setContextEmail(email);
+						setIsLoggedIn(true);
+					}
+				});
+		}
+	};
 
-    const checkIfCanLogIn = (event) => {
-      if (!isLoggedIn) {
-        axios.post(`http://localhost:8080/login`, null, {params: {email, password}})
-        .then((response) => {
-          console.log(response.data);
-          if (response.data != ""){ 
-            setName(response.data);
-            setIsLoggedIn(true);
-          }      
-        })
-    }
-  }
+	return (
+		<div className='Login'>
+			<h1 className='title'>Login</h1>
 
-  
-    return (
-      <div className="Login">
-          <h1 className="title" >Login</h1>
-          
-        <div>
-          <div controlId="email" bsSize="large">
-            <label>Email</label>
-            <br/>
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-             {errors.email && errors.email.message}
-          </div>
+			<div>
+				<div controlId='email' bsSize='large'>
+					<label>Email</label>
+					<br />
+					<input
+						type='email'
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					{errors.email && errors.email.message}
+				</div>
 
-          <div controlId="password" bsSize="large">
-            <label>Password</label>
-            <br/>
-            <input
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
+				<div controlId='password' bsSize='large'>
+					<label>Password</label>
+					<br />
+					<input
+						type='password'
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</div>
 
-          <br></br>
-          <Link to={"/"} >
-          <Button className="button" block buttonSize='btn--wide' buttonColor='blue' onClick={checkIfCanLogIn}>
-            Login
-          </Button>
-          </Link>
-        </div>
-        <div className="links">
-            <Link className="link" to="/register">
-                Register
-            </Link>
-        </div>
-      </div>
-    );
-}
-
+				<br></br>
+				<Link to={'/'}>
+					<Button
+						className='button'
+						block
+						buttonSize='btn--wide'
+						buttonColor='blue'
+						onClick={checkIfCanLogIn}
+					>
+						Login
+					</Button>
+				</Link>
+			</div>
+			<div className='links'>
+				<Link className='link' to='/register'>
+					Register
+				</Link>
+			</div>
+		</div>
+	);
+};
 
 export default LoginPage;

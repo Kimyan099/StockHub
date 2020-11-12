@@ -1,9 +1,8 @@
-import Axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { StockContext } from './StockContext';
 import axios from 'axios';
 import './Stock.css';
-import CompanyProfileWidget from './../../ui/CompanyProfileWidget'
+import CompanyProfileWidget from './../../ui/CompanyProfileWidget';
 
 function StockDetails() {
 	const [symbol] = useContext(StockContext);
@@ -21,7 +20,7 @@ function StockDetails() {
 				setCurrentPrice(res.data.c);
 				setOpenPrice(res.data.o);
 				setPriceClassName();
-				setPercentageChange(currentPrice / openPrice * 100 - 100);
+				setPercentageChange((currentPrice / openPrice) * 100 - 100);
 				console.log(res.data);
 			});
 	}, [symbol]);
@@ -35,13 +34,12 @@ function StockDetails() {
 	};
 
 	return (
-		<div className="stock-detail-card">
-			<CompanyProfileWidget symbol={symbol}/>
-            {/* <p className={className}> {currentPrice}</p> */}
+		<div className='stock-detail-card'>
+			<CompanyProfileWidget symbol={symbol} />
+			{/* <p className={className}> {currentPrice}</p> */}
 			{/* <p className={className}>{percentageChange}</p> */}
 			{/* <div>{symbol}</div> */}
 		</div>
-		
 	);
 }
 

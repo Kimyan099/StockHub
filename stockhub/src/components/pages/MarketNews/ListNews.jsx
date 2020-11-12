@@ -5,16 +5,16 @@ import NewsCategoryDropDown from './NewsCategoryDropDown';
 import './ListNews.css';
 
 const ListNews = () => {
-  const [news] = useContext(NewsContext);
-  const [search, setSearch] = useState('');
+	const [news] = useContext(NewsContext);
+	const [search, setSearch] = useState('');
 
-  const update = (e) => {
-    setSearch(e.target.value);
-  };
+	const update = (e) => {
+		setSearch(e.target.value);
+	};
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
   const filter = (newsBlock) => {
     let convertedTime = timeConverter(newsBlock.datetime);
