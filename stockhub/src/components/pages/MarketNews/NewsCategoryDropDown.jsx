@@ -16,8 +16,6 @@ export default function NewsCategoryDropDown() {
   const [currentCategory, setCurrentCategory] = useContext(NewsCategoryContext);
   const [currentOrderType, setCurrentOrderType] = useContext(NewsOrderContext);
 
-  //let newCurrentCategory = 'allnews';
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -62,7 +60,6 @@ export default function NewsCategoryDropDown() {
   };
 
   useEffect(() => {
-    console.log('Category Context in updateNews: ', currentCategory);
     axios
       .get(
         `http://localhost:8080/news/category/${currentCategory}/orderby/${currentOrderType}`
@@ -74,24 +71,24 @@ export default function NewsCategoryDropDown() {
 
   const setCategory = (category) => {
     setCurrentCategory(category);
-    //newCurrentCategory = category;
-    console.log('Category Parameter: ', category);
-    console.log('Category Context: ', currentCategory);
-    //updateNewsList();
   };
 
   const setOrder = (orderType) => {
     setCurrentOrderType(orderType);
-    //updateNewsList();
   };
 
   const useStyles = makeStyles({
     buttonStyle: {
       color: 'black',
-      backgroundColor: 'white',
+      backgroundColor: '#e8e8e8',
       borderStyle: 'solid',
       borderColor: 'black',
       border: '1px',
+
+      '&:hover': {
+        cursor: 'pointer',
+        backgroundColor: 'white',
+      },
     },
   });
 

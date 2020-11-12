@@ -15,6 +15,10 @@ const NewsBlock = (props) => {
             <Card.Img variant='top' src={props.image} />
             <Card.Body>
               <Card.Title>{props.headline}</Card.Title>
+              <br></br>
+              <Card.Text className='card-text'>
+                Posted: {props.datetime}
+              </Card.Text>
             </Card.Body>
           </Card>
         </div>
