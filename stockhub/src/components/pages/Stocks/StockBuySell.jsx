@@ -5,6 +5,25 @@ import { StockContext } from "./StockContext";
 import axios from "axios";
 
 function StockBuySell() {
+
+
+
+
+	// const buyStock = () => {
+	// 	axios
+	// 		.get(
+	// 			`https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=bu21m3v48v6u9tetnbig`
+	// 		)
+	// 		.then((res) => {
+	// 			setCurrentPrice(res.data.c);
+	// 			axios
+	// 				.post(`http://localhost:8080/buy`, {
+	// 					symbol: stockSymbol,
+	// 					price: currentPrice,
+	// 				})
+	// 				.then((response) => {});
+	// 		});
+	// };
   const [currentPrice, setCurrentPrice] = useState(0);
   const [stock] = useContext(StockContext);
   const [stockImageLink, setStockImageLink] = useState("");
