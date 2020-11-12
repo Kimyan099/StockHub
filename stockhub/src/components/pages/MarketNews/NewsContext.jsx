@@ -6,11 +6,13 @@ export const NewsContext = createContext();
 export const NewsCollection = (props) => {
 	const [news, setNews] = useState([]);
 
-	useEffect(() => {
-		axios.get(`http://localhost:8080/news`).then((res) => {
-			setNews(res.data);
-		});
-	}, []);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/news/category/allnews/orderby/desc`)
+      .then((res) => {
+        setNews(res.data);
+      });
+  }, []);
 
 	return (
 		<NewsContext.Provider value={[news, setNews]}>
