@@ -1,42 +1,45 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { div, input } from 'react-bootstrap';
-import './LoginPage.css';
-import { Button } from '../../../ui/Button';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { UserContext } from './UserContext';
-import { useForm } from 'react-hook-form';
+import React, {useEffect, useState, useContext } from "react";
+import { div, input } from "react-bootstrap";
+import "./LoginPage.css";
+import { Button } from "../../../ui/Button";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { UserContext } from "./UserContext"
+import { useForm } from "react-hook-form";
+import { SmsOutlined } from "@material-ui/icons";
+
+
 
 const LoginPage = (props) => {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [
-		name,
-		setName,
-		isLoggedIn,
-		setIsLoggedIn,
-		contextEmail,
-		setContextEmail,
-	] = useContext(UserContext);
-	const [route, setRoute] = useState('/login');
-	const { handleSubmit, register, errors } = useForm();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName, 
+      isLoggedIn, setIsLoggedIn, 
+      contextEmail, setContextEmail,
+      contextAddress, setContextAddress,
+      contextPhoneNumber, setContextPhoneNumber,
+      contextMobileNumber, setContextMobileNumber
+       ] = useContext(UserContext);
+    const [route, setRoute] = useState("/login");
+    const { handleSubmit, register, errors } = useForm();
 
-	const checkIfCanLogIn = (event) => {
-		if (!isLoggedIn) {
-			axios
-				.post(`http://localhost:8080/login`, null, {
-					params: { email, password },
-				})
-				.then((response) => {
-					console.log(response.data);
-					if (response.data != '') {
-						setName(response.data);
-						setContextEmail(email);
-						setIsLoggedIn(true);
-					}
-				});
-		}
-	};
+
+    const checkIfCanLogIn = (event) => {
+      if (!isLoggedIn) {
+        axios.post(`http://localhost:8080/login`, null, {params: {email, password}})
+        .then((response) => {
+          console.log(response.data);
+          if (response.data != ""){ 
+            setName(response.data.name);
+            setContextAddress(response.data.address);
+            setContextPhoneNumber(response.data.phoneNumber)
+            setContextMobileNumber(response.data.mobileNumber)
+            setContextEmail(email);
+            setIsLoggedIn(true);
+          }      
+        })
+    }
+  }
 
 	return (
 		<div className='Login'>
