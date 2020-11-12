@@ -12,13 +12,11 @@ const NewsBlock = (props) => {
       <a href={props.url} style={{ textDecoration: 'none' }} target='_blank'>
         <div className='card-block'>
           <Card style={{ width: '18rem' }}>
+            <Card.Text>{props.datetime}</Card.Text>
             <Card.Img variant='top' src={props.image} />
             <Card.Body>
               <Card.Title>{props.headline}</Card.Title>
               <br></br>
-              <Card.Text className='card-text'>
-                Posted: {props.datetime}
-              </Card.Text>
             </Card.Body>
           </Card>
         </div>

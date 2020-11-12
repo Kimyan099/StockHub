@@ -9,7 +9,7 @@
   text-align: center;
   font-size: 30px;
   margin-bottom: 50px;
-  height: 250px;
+  height: 300px;
 }
 
 .row {
@@ -22,12 +22,12 @@
 .card {
   width: 90%;
   background: #fff;
-  border: 1px solid #ccc;
   margin-bottom: 50px;
   transition: 0.3s;
   color: black;
   text-decoration: none;
-  height: 350px;
+  height: 370px;
+  border: 2px solid black;
 }
 
 .card-header {
@@ -39,8 +39,8 @@
 
 .card-body {
   padding: 10px 10px;
-  text-align: center;
   font-size: 18px;
+  text-align: center;
 }
 
 .card-img-top {
@@ -63,8 +63,10 @@
   text-decoration: underline;
 }
 
-.cart-text {
-  font-weight: bold;
+.card-text {
+  padding: 10px 10px;
+  font-size: 17px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1000px) {

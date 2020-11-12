@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding-bottom: 80px;
+  padding-bottom: -50px;
 }
 
 .search-div {
@@ -26,5 +26,16 @@
 }
 
 .drop-down {
-  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.news-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  margin-bottom: -35px;
+  color: white;
+  font-size: 20px;
 }

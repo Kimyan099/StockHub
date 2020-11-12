@@ -84,6 +84,7 @@ export default function NewsCategoryDropDown() {
       borderStyle: 'solid',
       borderColor: 'black',
       border: '1px',
+      marginRight: '5px',
 
       '&:hover': {
         cursor: 'pointer',
