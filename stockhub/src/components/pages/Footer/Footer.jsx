@@ -15,7 +15,6 @@ function Footer() {
 		<footer className='footer-container'>
 			<div className='footer-links'>
 				<div className='footer-link-wrapper'>
-					
 					<div className='footer-link-items'>
 						<h2>About Us</h2>
 						<Link to='/temp'>How it works</Link>
@@ -42,10 +41,18 @@ function Footer() {
 					</div>
 					<div className='footer-link-items'>
 						<h2>Social Media</h2>
-						<a href='https://www.instagram.com/' target='_blank'>Instagram</a>
-						<a href='https://www.facebook.com/' target='_blank'>Facebook</a>
-						<a href='https://www.youtube.com/' target='_blank'>Youtube</a>
-						<a href='https://www.twitter.com/' target='_blank'>Twitter</a>
+						<a href='https://www.instagram.com/' target='_blank'>
+							Instagram
+						</a>
+						<a href='https://www.facebook.com/' target='_blank'>
+							Facebook
+						</a>
+						<a href='https://www.youtube.com/' target='_blank'>
+							Youtube
+						</a>
+						<a href='https://www.twitter.com/' target='_blank'>
+							Twitter
+						</a>
 					</div>
 				</div>
 			</div>

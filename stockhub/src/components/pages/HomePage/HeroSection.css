@@ -1,8 +1,12 @@
-.home__hero-section {
-    color: #fff;
-    padding: 50px 0;
+body {
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
-  
+
+.home__hero-section {
+  color: #fff;
+  padding: 50px 0;
+}
+
 .home__hero-row {
   align-items: center;
 }
@@ -20,8 +24,6 @@
 .list-item {
   margin: 100px;
 }
-
-
 
 .row {
   display: flex;
@@ -104,7 +106,6 @@ img {
 @media screen and (max-width: 768px) {
   .list-item {
     margin-left: 10px;
-
   }
 }
 
@@ -120,7 +121,6 @@ img {
     padding-bottom: 65px;
     margin-top: 200px;
     transition: all 1s ease;
-    
   }
 
   .col {

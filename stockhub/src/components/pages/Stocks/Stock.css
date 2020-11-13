@@ -1,3 +1,20 @@
+stock-recommendation-container-wrap {
+    width: 100vw;
+    background-color: rgb(217, 217, 228);
+}
+
+.stock-recommendation-container-outer {
+    /* margin: 50px; */
+    width: 100%;
+    border-radius: 20px;
+    border-color: red;
+}
+
+.stock-recommendation-container-inner {
+    display: flex;
+    justify-content: center;
+}
+
 .stock-button-container {
     display: flex;
     margin: 20px;
@@ -34,4 +51,10 @@
 .stock-page-item-container {
     text-align:'center';
     background-color: '#1c2237';
+}
+
+.popper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
