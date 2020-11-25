@@ -59,12 +59,12 @@ const Trades = (props) => {
 
         .then((response) => {
           axios
-            .get(`http://localhost:8080/client/active`)
+            .get(`http://localhost:8080/client/active`, {withCredentials: true})
             .then((res) => setStockList(res.data));
         });
     } else {
       axios
-        .get(`http://localhost:8080/client/active`)
+        .get(`http://localhost:8080/client/active`, {withCredentials: true})
         .then((res) => setStockList(res.data));
     }
   }, [bought]);
