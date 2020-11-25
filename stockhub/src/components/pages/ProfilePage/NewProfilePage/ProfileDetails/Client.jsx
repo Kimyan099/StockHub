@@ -43,7 +43,7 @@ const Client = (props) => {
 const savePhoneNumberData = () =>{
   changePhoneNumberVisibility() 
   setContextPhoneNumber(phoneNumber);
-  axios.post('http://localhost:8080/active/set-phone-number',  {"phoneNumber" : phoneNumber}, {
+  axios.post('http://localhost:8080/active/set-phone-number',  {"detail" : phoneNumber}, {
     withCredentials: true
   })
 }
@@ -61,7 +61,9 @@ const changePhoneNumberVisibility = () => {
 const saveMobileNumberData = () =>{
   changeMobileNumberVisibility()
   setContextMobileNumber(mobileNumber);
-  axios.post('http://localhost:8080/active/set-mobile-number', null, {params: {mobileNumber}})
+  axios.post('http://localhost:8080/active/set-mobile-number',  {"detail" : mobileNumber}, {
+    withCredentials: true
+  })
 }
 
 const cancelMobileNumberSave = () => {
@@ -77,7 +79,9 @@ const changeMobileNumberVisibility = () => {
 const saveAddressData = () =>{
   changeAddressVisibility()
   setContextAddress(address);
-  axios.post('http://localhost:8080/active/set-address', null, {params: {address}})
+  axios.post('http://localhost:8080/active/set-address',  {"detail" : address}, {
+    withCredentials: true
+  })
 }
 
 const cancelAddressSave = () => {
