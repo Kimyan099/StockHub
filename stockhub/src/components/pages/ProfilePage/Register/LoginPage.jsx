@@ -26,7 +26,7 @@ const LoginPage = (props) => {
 
     const checkIfCanLogIn = (event) => {
       if (!isLoggedIn) {
-        axios.post(`http://localhost:8080/login`, {"email": email, "password": password})
+        axios.post(`http://localhost:8080/login`, {"email": email, "password": password}, {withCredentials: true})
         .then((response) => {
           console.log(response.data);
           if (response.data != ""){ 
