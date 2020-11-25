@@ -37,7 +37,7 @@ function StockBuySell() {
       )
       .then((res) => {
         setCurrentPrice(res.data.c);
-        setStockName("test");
+        setStockName(stock);
         setBought(bought + 1);
       });
   };
@@ -67,7 +67,7 @@ function StockBuySell() {
           symbol: stock,
           name: stockName,
           imageLink: stockImageLink,
-        })
+        },{withCredentials: true})
 
         .then((response) => {});
     }
