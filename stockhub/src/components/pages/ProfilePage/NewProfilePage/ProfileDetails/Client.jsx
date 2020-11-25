@@ -41,9 +41,11 @@ const Client = (props) => {
 
 //Phone number
 const savePhoneNumberData = () =>{
-  changePhoneNumberVisibility()
+  changePhoneNumberVisibility() 
   setContextPhoneNumber(phoneNumber);
-  axios.post('http://localhost:8080/active/set-phone-number', null, {params: {phoneNumber}})
+  axios.post('http://localhost:8080/active/set-phone-number',  {"phoneNumber" : phoneNumber}, {
+    withCredentials: true
+  })
 }
 
 const cancelPhoneNumberSave = () => {
