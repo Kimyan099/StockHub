@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { NewsContext } from './NewsContext';
 import { NewsCategoryContext } from './NewsCategoryContext';
 import { NewsOrderContext } from './NewsOrderContext';
-import Button from '@material-ui/core/Button';
+import { Button } from '../../ui/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
