@@ -7,15 +7,7 @@ import { Button } from '../../ui/Button';
 import styled from 'styled-components';
 
 const StockSearchBar = () => {
-	const WrapperDiv = styled.div`
-		/* background-color: white;
-    border-radius: 10px;
-    height: 50px;
-    width: 300px;
-    margin-top: 15px;
-    align-items: center; */
-		//text-align: center;
-	`;
+	const WrapperDiv = styled.div;
 
 	const [companies] = useContext(CompaniesContext);
 
@@ -24,12 +16,9 @@ const StockSearchBar = () => {
 	const [contextStock, changeContextStock] = useContext(StockContext);
 
 	const changeSymbol = (value) => {
-		console.log(value);
 		try {
 			setStockSymbol(value.symbol);
 		} catch {}
-
-		//console.log(stock)
 	};
 
 	const updateSymbol = (e) => {
@@ -62,7 +51,6 @@ const StockSearchBar = () => {
 			</div>
 		</form>
 
-		// <div/>
 	);
 };
 
