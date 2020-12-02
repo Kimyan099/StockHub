@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './Stock.css';
-import StockBuySell from './StockBuySell';
+import StockBuy from './StockBuy';
 import StockRecommendation from './StockRecommendation';
 
 
@@ -8,7 +8,7 @@ function StockRecommendationBox() {
     return (
         <div className='stock-recommendation-container-wrap'>
             <StockRecommendation />
-            <StockBuySell />
+            <StockBuy />
         </div>
     )
 }

@@ -8,9 +8,7 @@ function StockBuySell() {
 	const [currentPrice, setCurrentPrice] = useState(0);
 	const [stock] = useContext(StockContext);
 	const [stockImageLink, setStockImageLink] = useState('');
-  const [bought, setBought] = useState(0);
-  const [increase, setIncrease] = useState(0);
-  const [decrease, setDeacrese] = useState(0);
+	const [bought, setBought] = useState(0);
 	const [stockName, setStockName] = useState('');
 
 	const buyStock = () => {
@@ -25,7 +23,7 @@ function StockBuySell() {
 			});
 	};
 
-	const sellStock = (event) => {
+	const sellStock = () => {
 		axios
 			.get(
 				`https://finnhub.io/api/v1/quote?symbol=${stock}&token=bu21m3v48v6u9tetnbig`
@@ -33,9 +31,7 @@ function StockBuySell() {
 			.then((res) => {
 				setCurrentPrice(res.data.c);
 				setStockName(stock);
-        setDeacrese(decrease - 1);
-        console.log(event);
-        
+        setBought(bought - 1);
         axios 
           .post(`http://localhost:8080/sell`,
           {
@@ -84,26 +80,7 @@ function StockBuySell() {
 
 				.then((response) => {});
 		}
-  }, [bought]);
-
-  
-  useEffect(() => {
-		if (currentPrice != 0) {
-			axios
-				.post(
-					`http://localhost:8080/sell`,
-					{
-						price: currentPrice,
-						symbol: stock,
-						name: stockName,
-						imageLink: stockImageLink,
-					},
-					{ withCredentials: true }
-				)
-
-				.then((response) => {});
-		}
-	}, [decrease]);
+	}, [bought]);
 
 	return (
 		<div>
@@ -117,16 +94,6 @@ function StockBuySell() {
 					>
 						Buy
 					</Button>
-					<div className='button-sell'>
-						<Button
-              buttonColor='red'
-							onClick={(event) => {
-								sellStock(event);
-							}}
-						>
-							Sell
-						</Button>
-					</div>
 				</div>
 			</div>
 		</div>

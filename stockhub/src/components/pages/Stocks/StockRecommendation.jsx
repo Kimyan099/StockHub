@@ -2,9 +2,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import './Stock.css';
 import { StockContext } from './StockContext';
 import axios from 'axios';
-import ProfilePageTrade from '../ProfilePage/NewProfilePage/ProfileTrade/ProfilePageTrade';
-import { Button } from '../../ui/Button';
-import TechnicalAnalysisWidget from '../../ui/TechnicalAnalysisWidget';
 import Popper from '../../ui/Popper';
 
 import {
@@ -122,9 +119,6 @@ function StockRecommendation() {
 						<ListItemText></ListItemText>
 						<ListItemText className={className}>This stock is currently costs: {currentPrice}</ListItemText>
 					</ListItem>
-					{/* <ListItem>
-						<TechnicalAnalysisWidget stockSymbol={stockSymbol} />
-					</ListItem> */}
 				</List>
 			</div>
 		</div>

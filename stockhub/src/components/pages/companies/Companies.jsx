@@ -11,7 +11,6 @@ const CompanyFinder = (props) => {
 
 	const handleChange = (event) => {
 		setCompanyName(event.target.value);
-		console.log(companyName);
 	};
 
 	useEffect(() => {
@@ -45,12 +44,10 @@ const CompanyFinder = (props) => {
 						</Link>
 					</div>
 				);
-			} else {
-				return null;
 			}
-		} else {
-			return null;
-		}
+			
+		} 
+		return null;
 	};
 
 	const CompnayPage = styled.div`
