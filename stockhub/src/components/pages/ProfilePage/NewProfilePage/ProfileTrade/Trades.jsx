@@ -50,7 +50,7 @@ const Trades = (props) => {
   useEffect(() => {
     if (currentPrice != 0) {
       axios
-        .post(`http://localhost:8080/buy`, {
+        .post(`http://localhost:8762/auth/buy`, {
           price: currentPrice,
           symbol: stock,
           name: stockName,
@@ -59,12 +59,12 @@ const Trades = (props) => {
 
         .then((response) => {
           axios
-            .get(`http://localhost:8080/client/active`, {withCredentials: true})
+            .get(`http://localhost:8762/auth/client/active`, {withCredentials: true})
             .then((res) => setStockList(res.data));
         });
     } else {
       axios
-        .get(`http://localhost:8080/client/active`, {withCredentials: true})
+        .get(`http://localhost:8762/auth/client/active`, {withCredentials: true})
         .then((res) => setStockList(res.data));
     }
   }, [bought]);

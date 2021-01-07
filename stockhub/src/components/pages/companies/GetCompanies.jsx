@@ -9,7 +9,7 @@ export const CompanyProvider = (props) => {
 	const access_token = 'bu21mlf48v6u9tetnbt0';
 
 	useEffect(() => {
-		axios.get(`http://localhost:8080/companies`).then((res) => {
+		axios.get(`http://localhost:8762/companies`).then((res) => {
 			setCompanies(res.data.slice(81, 1000));
 			console.log(res.data);
 		});

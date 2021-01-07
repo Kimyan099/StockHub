@@ -8,7 +8,7 @@ export const NewsCollection = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/news/category/allnews/orderby/desc`)
+      .get(`http://localhost:8762/news/category/allnews/orderby/desc`)
       .then((res) => {
         setNews(res.data);
       });
