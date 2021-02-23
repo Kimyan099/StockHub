@@ -1,5 +1,3 @@
-##Stockhub
-
 ## Requirements to run the application:
 - installation of NodeJS for NPM package(https://nodejs.org/en/)
 - installation of latest version of React Framework (https://www.npmjs.com/package/react.cli)
