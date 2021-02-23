@@ -1,4 +1,4 @@
-#Stockhub
+##Stockhub
 
 ## Requirements to run the application:
 - installation of NodeJS for NPM package(https://nodejs.org/en/)
