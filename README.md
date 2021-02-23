@@ -1,12 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Stockhub
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-
-=======
 ## Requirements to run the application:
 - installation of NodeJS for NPM package(https://nodejs.org/en/)
 - installation of latest version of React Framework (https://www.npmjs.com/package/react.cli)
