@@ -31,31 +31,29 @@ const Trades = (props) => {
   const [stock, setStock, stockList, setStockList] = useContext(StockContext);
   const [symbol, setSymbol] = useState("");
   const [stockName, setStockName] = useState("");
-  const [bought, setBought] = useState(0);
+  const [bought, setbought] = useState(0);
   const [stockImageLink, setStockImageLink] = useState("");
 
   const buyStock = (stock) => {
-    axios
-      .get(
-        `https://finnhub.io/api/v1/quote?symbol=${stock.symbol}&token=bu21m3v48v6u9tetnbig`
-      )
-      .then((res) => {
-        setCurrentPrice(res.data.c);
-        setStockName(stock.name);
-        setSymbol(stock.symbol);
-        setBought(bought + 1);
-      });
+    setCurrentPrice(stock.price);
+    setStockName(stock.name);
+    setSymbol(stock.symbol);
+    setbought(bought + 1);
   };
 
   useEffect(() => {
     if (currentPrice != 0) {
       axios
-        .post(`http://localhost:8080/buy`, {
-          price: currentPrice,
-          symbol: stock,
-          name: stockName,
-          imageLink: stockImageLink,
-        })
+          .post(
+              `http://localhost:8080/buy`,
+              {
+                price: currentPrice,
+                symbol: symbol,
+                name: stockName,
+                imageLink: stockImageLink,
+              },
+              { withCredentials: true }
+            )
 
         .then((response) => {
           axios
@@ -75,7 +73,7 @@ const Trades = (props) => {
         `https://finnhub.io/api/v1//stock/profile2?symbol=${stock.symbol}&token=bu21m3v48v6u9tetnbig`
       )
       .then((res) => {
-        if (res.data.logo) {
+        if (res.data.logo !== "")  {
           setStockImageLink(res.data.logo);
         } else {
           setStockImageLink(
