@@ -32,6 +32,7 @@ const Trades = (props) => {
   const [symbol, setSymbol] = useState("");
   const [stockName, setStockName] = useState("");
   const [bought, setbought] = useState(0);
+  const [sold, setSold] = useState(0);
   const [stockImageLink, setStockImageLink] = useState("");
 
   const buyStock = (stock) => {
@@ -39,6 +40,13 @@ const Trades = (props) => {
     setStockName(stock.name);
     setSymbol(stock.symbol);
     setbought(bought + 1);
+  };
+
+  const sellStock = (stock) => {
+    setCurrentPrice(stock.price);
+    setStockName(stock.name);
+    setSymbol(stock.symbol);
+    setSold(sold + 1);
   };
 
   useEffect(() => {
@@ -67,6 +75,32 @@ const Trades = (props) => {
     }
   }, [bought]);
 
+  useEffect(() => {
+    if (currentPrice != 0) {
+      axios
+          .post(
+              `http://localhost:8080/sell`,
+              {
+                price: currentPrice,
+                symbol: symbol,
+                name: stockName,
+                imageLink: stockImageLink,
+              },
+              { withCredentials: true }
+            )
+
+        .then((response) => {
+          axios
+            .get(`http://localhost:8080/client/active`, {withCredentials: true})
+            .then((res) => setStockList(res.data));
+        });
+    } else {
+      axios
+        .get(`http://localhost:8080/client/active`, {withCredentials: true})
+        .then((res) => setStockList(res.data));
+    }
+  }, [sold]);
+
   const getStockImage = (stock) => {
     axios
       .get(
@@ -81,7 +115,7 @@ const Trades = (props) => {
           );
         }
 
-        buyStock(stock);
+        
       });
   };
 
@@ -98,11 +132,16 @@ const Trades = (props) => {
           buttonColor="green"
           onClick={() => {
             getStockImage(stock);
+            buyStock(stock);
           }}
-        >
-          Buy
+        > Buy
         </Button>
-        <Button buttonColor="red">Sell</Button>
+        <Button buttonColor="red"
+                onClick={() => {
+                  getStockImage(stock);
+                  sellStock(stock);
+                }}
+        >Sell</Button>
       </ListItem>
     );
   };
